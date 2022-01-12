@@ -105,6 +105,13 @@ menu{
   padding: 26px 30px 31px;
 }
 
+.title{
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .btn{
   border: none;
   height: 40px;
@@ -118,12 +125,24 @@ menu{
   font-weight: 500;
   
   background: linear-gradient(180deg, #6232FB 0%, #7420C7 100%);
-  border-radius: 150px;
+  border-radius: 25px;
   color: var(--text);
   &:hover{
     background: linear-gradient(180deg, rgba(#6232FB, .8) 0%, rgba(#7420C7, .8) 100%);
   }
+  &--yellow{
+    background: linear-gradient(180deg, #F6A730 0%, #EF7300 100%);
+    &:hover{
+      background: linear-gradient(180deg, rgba(#F6A730, .8) 0%, rgba(#EF7300, .8) 100%);
+    }
+  }
   &--blue{
+    background: linear-gradient(180deg, #6232FB 0%, #4720C7 100%);
+    &:hover{
+      background: linear-gradient(180deg, rgba(#6232FB, .8) 0%, rgba(#4720C7, .8) 100%);
+    }
+  }
+  &--dark-blue{
     background: linear-gradient(180deg, #6131FA 0%, #4720C7 100%);
     &:hover{
       background: linear-gradient(180deg, rgba(#6131FA, .8) 0%, rgba(#4720C7, .8) 100%);
@@ -134,6 +153,7 @@ menu{
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
+    border-radius: 150px;
   }
   // &--pink{
   //   background-color: $pink;

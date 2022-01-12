@@ -25,7 +25,7 @@
         <app-button
         :title="info.instruction.btnTitle"
         big
-        view="blue"
+        view="dark-blue"
         ></app-button>
       </div>
     </div>

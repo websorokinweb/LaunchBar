@@ -2,7 +2,64 @@
 @import '_fonts.scss';
 @import '_global.scss';
 
+.index-cover{
+  position: relative;
+  padding: 86px 0 91px;
+  &__graphic{
+    pointer-events: none;
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    // width: 96vw;
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info{
+    margin-top: 45px;
+  }
+  &__info,
+  &__imgwrapper{
+    max-width: 540px;
+  }
+  &__title{
+    margin-bottom: 23px;
+  }
+  &__descr{
+    margin-bottom: 29px;
+    font-size: 28px;
+    line-height: 33px;
+    color: #778CAC;
+    font-weight: 700;
+  }
+  &__buttons{
+    .btn{
+      max-width: 190px;
+      width: 100%;
+    }
+    .btn + .btn{
+      margin-left: 30px;
+    }
+  }
+}
+
 .index-info{
+  padding-bottom: 77px;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -37px;
+    background-image: url('./assets/images/index-info-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
   &__title{
     font-size: 28px;
     line-height: 33px;
@@ -55,7 +112,8 @@
   height: 80px;
   width: 100vw;
   &-gap{
-    height: 80px;
+    height: 100px;
+    background: #15151B;
   }
   &__inner{
     display: flex;
