@@ -89,6 +89,21 @@
   }
 }
 
+.list-cover{
+  background: url('./assets/images/list-cover.png');
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  &__inner{
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title{
+    margin-bottom: 0;
+  }
+}
+
 .header{
   background: var(--main-bg);
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);

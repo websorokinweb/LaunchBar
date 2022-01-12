@@ -22,7 +22,7 @@
 
   <router-link
   v-else
-  class='btn'
+  class='btn link'
   :class='[useStyle, this.big ? "btn--big" : ""]'
   :to='custom === null ? href : custom'
   >

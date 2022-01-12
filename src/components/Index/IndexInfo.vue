@@ -15,6 +15,8 @@
           <app-button
           :title="item.btnTitle"
           big
+          link
+          :href="item.href"
           ></app-button>
         </li>
       </ul>
@@ -42,11 +44,13 @@ export default {
             title: 'Add project',
             descr: 'The interface is as simple and intuitive as possible. To launch a project, it is enough to submit a request by clicking on the Create button.',
             btnTitle: 'Create Project',
+            href: '',
           },
           {
             title: 'Buy tokens',
             descr: 'To invest in the project, connect your wallet. Go to the page with all the companies. Select the appropriate company, enter the amount in BNB (IMX, NEAR) in the amount field, and click Buy.',
             btnTitle: 'Launchpad List',
+            href: '/list',
           },
         ],
         instruction:{
