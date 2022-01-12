@@ -46,20 +46,6 @@
 
 .index-info{
   padding-bottom: 77px;
-  position: relative;
-  &:after{
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -37px;
-    background-image: url('./assets/images/index-info-bg.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
   &__title{
     font-size: 28px;
     line-height: 33px;
@@ -478,6 +464,20 @@
   background: #171726;
   box-shadow: 0px -4px 13px rgba(0, 0, 0, 0.13);
   border-top: 1px solid #2E2E3D;
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 39px;
+    background-image: url('./assets/images/footer-graphic.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+  }
   &__inner{
     display: flex;
     justify-content: space-between;
