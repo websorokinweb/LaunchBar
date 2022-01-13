@@ -120,15 +120,15 @@ menu{
 
 .btn{
   border: none;
-  height: 40px;
+  height: 30px;
   font-weight: 700;
   cursor: pointer;
-  padding-top: 10px;
-  padding-bottom: 11px;
   text-align: center;
   transition: backgoround .4s, backgoround-color .4s, border-color .4s, color .4s;
 
   font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
   
   background: linear-gradient(180deg, #6232FB 0%, #7420C7 100%);
   border-radius: 25px;
