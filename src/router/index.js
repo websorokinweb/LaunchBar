@@ -4,6 +4,8 @@ import Index from '../views/Index.vue';
 
 import List from '../views/List.vue';
 
+import Project from '../views/Project.vue';
+
 const routes = [
   {
     path: '/',
@@ -14,6 +16,11 @@ const routes = [
     path: '/list',
     name: 'List',
     component: List,
+  },
+  {
+    path: '/project/:project',
+    name: 'Project',
+    component: Project,
   },
   // {
   //   path: '/about',
