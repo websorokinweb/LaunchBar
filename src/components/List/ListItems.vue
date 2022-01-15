@@ -9,7 +9,7 @@
           'project-card--ended'
         "
 
-        to="/project/dd"
+        :to="'/project/' + item.name"
 
         v-for='item in allProjects'
         :key="item"
@@ -33,15 +33,15 @@
                 Soft/Hard Cap:
               </span>
               <span class="project-card__cap-value">
-                {{ item.softCapMask + ' ' + item.blockchainLabel }}
+                {{ item.softCapMask + ' ' + item.blockchainSymbol }}
                 <span class="project-card__cap-divider">
                   -
                 </span>
-                {{ item.hardCapMask + ' ' + item.blockchainLabel }}
+                {{ item.hardCapMask + ' ' + item.blockchainSymbol }}
               </span>
             </span>
             <span class="project-card__rate">
-              {{ 1 + ' ' + item.blockchainLabel + ' = ' + item.exchangeRateMask + ' ' + item.tokenLabel }}
+              {{ 1 + ' ' + item.blockchainSymbol + ' = ' + item.exchangeRateMask + ' ' + item.tokenSymbol }}
             </span>
             <span class="project-card__progress">
               <span class="project-card__progress-label project-card__label">
@@ -53,10 +53,10 @@
               ></span>
               <span class="project-card__progress-values">
                 <span class="project-card__progress-value">
-                  {{ item.collected + ' ' + item.blockchainLabel }}
+                  {{ item.collected + ' ' + item.blockchainSymbol }}
                 </span>
                 <span class="project-card__progress-value">
-                  {{ item.hardCapMask + ' ' + item.blockchainLabel}}
+                  {{ item.hardCapMask + ' ' + item.blockchainSymbol}}
                 </span>
               </span>
             </span>
@@ -96,7 +96,6 @@ export default {
         }else{
           item.lineProgress = 'width:' + item.progress + '%'
         }
-
         
         item.progressMask = item.progress.toFixed(2) + '%'
 
@@ -116,23 +115,41 @@ export default {
       info:{
         items:[
           {
-            name: 'NameProject',
+            name: 'BabyMafia',
             status: 'upcoming',
             image: require('@/assets/images/temp/list-item-1.png'),
-            blockchainLabel: 'BNB',
-            tokenLabel: 'SOFT',
+            blockchainSymbol: 'BNB',
+            tokenSymbol: 'SOFT',
             collected: 0,
             saleStart: '',
             softCap: 75,
             hardCap: 150,
             exchangeRate: 5000000000,
+
+            presaleAdress: '',  
+            tokenDecimals: 9,
+            tokenAdress: '0xB4B57F17635134eA65deF7237292ba5ED8e4C975',
+            totalSupply: 1000000000000000,
+            tokenForPresale: 229999999999950,
+            tokenForLiquadity: 160999999999965,
+            presaleRate: 1533333333333,
+            listingRate: 1533333333333,
+            initialMarketCap: 147636,
+            unsoldTokens: 'Refund',
+
+            presaleStartTime: '2022.01.12 18:00 (UTC)',
+            presaleEndTime: '2022.01.12 18:00 (UTC)',
+
+            listingOn: 'Pancakeswap',
+            liquadityPercent: 70,
+            liquadityLockupTime: '120 days after pool ends',
           },
           {
             name: 'NameProject',
             status: 'live',
             image: require('@/assets/images/temp/list-item-2.png'),
-            blockchainLabel: 'BNB',
-            tokenLabel: 'SOFT',
+            blockchainSymbol: 'BNB',
+            tokenSymbol: 'SOFT',
             collected: 250,
             saleStart: '',
             softCap: 250,
@@ -143,8 +160,8 @@ export default {
             name: 'NameProject',
             status: 'ended',
             image: require('@/assets/images/temp/list-item-3.png'),
-            blockchainLabel: 'BNB',
-            tokenLabel: 'SOFT',
+            blockchainSymbol: 'BNB',
+            tokenSymbol: 'SOFT',
             collected: 100,
             saleStart: '',
             softCap: 50,
@@ -155,8 +172,8 @@ export default {
             name: 'NameProject',
             status: 'upcoming',
             image: require('@/assets/images/temp/list-item-1.png'),
-            blockchainLabel: 'BNB',
-            tokenLabel: 'SOFT',
+            blockchainSymbol: 'BNB',
+            tokenSymbol: 'SOFT',
             collected: 0,
             saleStart: '',
             softCap: 75,
@@ -167,8 +184,8 @@ export default {
             name: 'NameProject',
             status: 'live',
             image: require('@/assets/images/temp/list-item-2.png'),
-            blockchainLabel: 'BNB',
-            tokenLabel: 'SOFT',
+            blockchainSymbol: 'BNB',
+            tokenSymbol: 'SOFT',
             collected: 250,
             saleStart: '',
             softCap: 250,
@@ -179,8 +196,8 @@ export default {
             name: 'NameProject',
             status: 'ended',
             image: require('@/assets/images/temp/list-item-3.png'),
-            blockchainLabel: 'BNB',
-            tokenLabel: 'SOFT',
+            blockchainSymbol: 'BNB',
+            tokenSymbol: 'SOFT',
             collected: 100,
             saleStart: '',
             softCap: 50,

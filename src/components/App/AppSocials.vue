@@ -15,6 +15,17 @@
 
 <script>
 export default {
+  props: {
+    custom: {
+      type: Array,
+      default: null,
+    },
+  },
+  computed: {
+    items() {
+      return this.custom ? this.custom : this.socials
+    }
+  },
   data() {
     return {
       socials:[
