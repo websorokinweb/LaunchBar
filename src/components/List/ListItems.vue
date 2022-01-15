@@ -11,7 +11,7 @@
 
         to="/project/dd"
 
-        v-for='item in info.items'
+        v-for='item in allProjects'
         :key="item"
         >
           <span class="project-card__imgwrapper">
@@ -33,31 +33,41 @@
                 Soft/Hard Cap:
               </span>
               <span class="project-card__cap-value">
-                {{ item.softCap + ' = ' + item.hardCap }}
+                {{ item.softCapMask + ' ' + item.blockchainLabel }}
+                <span class="project-card__cap-divider">
+                  -
+                </span>
+                {{ item.hardCapMask + ' ' + item.blockchainLabel }}
               </span>
+            </span>
+            <span class="project-card__rate">
+              {{ 1 + ' ' + item.blockchainLabel + ' = ' + item.exchangeRateMask + ' ' + item.tokenLabel }}
             </span>
             <span class="project-card__progress">
               <span class="project-card__progress-label project-card__label">
-                Progress: (0.00%)
+                {{ 'Progress: (' + item.progressMask + ')' }}
               </span>
               <span class="project-card__progress-line"></span>
               <span class="project-card__progress-line project-card__progress-line--done"
-              :style="
-                'width: ' + item.progress + '%'
-              "
+              :style="item.lineProgress"
               ></span>
               <span class="project-card__progress-values">
                 <span class="project-card__progress-value">
-
+                  {{ item.collected + ' ' + item.blockchainLabel }}
                 </span>
                 <span class="project-card__progress-value">
-
+                  {{ item.hardCapMask + ' ' + item.blockchainLabel}}
                 </span>
               </span>
             </span>
             <span class="project-card__footer">
-              <span class="project-card__sale-info">
-
+              <span class="project-card__sale">
+                <span class="project-card__sale-label">
+                  Presale:
+                </span>
+                <span class="project-card__sale-time">
+                  Ended
+                </span>
               </span>
               <app-button
               title="View"
@@ -72,7 +82,35 @@
 </template>
 
 <script>
+import maskTextMixin from '@/mixins/maskTextMixin'
+
 export default {
+  computed: {
+    allProjects() {
+      return this.info.items.map( (item) => {
+
+        let percentageRate = item.hardCap / 100
+        item.progress = item.collected / percentageRate
+        if(item.progress > 100){
+          item.lineProgress = 'width: 100%'
+        }else{
+          item.lineProgress = 'width:' + item.progress + '%'
+        }
+
+        
+        item.progressMask = item.progress.toFixed(2) + '%'
+
+        item.exchangeRateMask = this.maskText(item.exchangeRate)
+        item.softCapMask = this.maskText(item.softCap)
+        item.hardCapMask = this.maskText(item.hardCap)
+
+        return item
+      })
+    }
+  },
+  mixins:[
+    maskTextMixin,
+  ],
   data() {
     return {
       info:{
@@ -81,49 +119,73 @@ export default {
             name: 'NameProject',
             status: 'upcoming',
             image: require('@/assets/images/temp/list-item-1.png'),
-            progress: 0,
-            softCap: '1 BNB',
-            hardCap: '5,000,000,000 SOFT',
+            blockchainLabel: 'BNB',
+            tokenLabel: 'SOFT',
+            collected: 0,
+            saleStart: '',
+            softCap: 75,
+            hardCap: 150,
+            exchangeRate: 5000000000,
           },
           {
             name: 'NameProject',
             status: 'live',
             image: require('@/assets/images/temp/list-item-2.png'),
-            progress: 50,
-            softCap: '1 BNB',
-            hardCap: '7,347,030,021 CDR',
+            blockchainLabel: 'BNB',
+            tokenLabel: 'SOFT',
+            collected: 250,
+            saleStart: '',
+            softCap: 250,
+            hardCap: 500,
+            exchangeRate: 7347030021,
           },
           {
             name: 'NameProject',
             status: 'ended',
             image: require('@/assets/images/temp/list-item-3.png'),
-            progress: 100,
-            softCap: '1 BNB',
-            hardCap: '3,240,071,022 SHIBA22',
+            blockchainLabel: 'BNB',
+            tokenLabel: 'SOFT',
+            collected: 100,
+            saleStart: '',
+            softCap: 50,
+            hardCap: 100,
+            exchangeRate: 3240071022,
           },
           {
             name: 'NameProject',
             status: 'upcoming',
             image: require('@/assets/images/temp/list-item-1.png'),
-            progress: 0,
-            softCap: '1 BNB',
-            hardCap: '5,000,000,000 SOFT',
+            blockchainLabel: 'BNB',
+            tokenLabel: 'SOFT',
+            collected: 0,
+            saleStart: '',
+            softCap: 75,
+            hardCap: 150,
+            exchangeRate: 5000000000,
           },
           {
             name: 'NameProject',
             status: 'live',
             image: require('@/assets/images/temp/list-item-2.png'),
-            progress: 50,
-            softCap: '1 BNB',
-            hardCap: '7,347,030,021 CDR',
+            blockchainLabel: 'BNB',
+            tokenLabel: 'SOFT',
+            collected: 250,
+            saleStart: '',
+            softCap: 250,
+            hardCap: 500,
+            exchangeRate: 7347030021,
           },
           {
             name: 'NameProject',
             status: 'ended',
             image: require('@/assets/images/temp/list-item-3.png'),
-            progress: 100,
-            softCap: '1 BNB',
-            hardCap: '3,240,071,022 SHIBA22',
+            blockchainLabel: 'BNB',
+            tokenLabel: 'SOFT',
+            collected: 100,
+            saleStart: '',
+            softCap: 50,
+            hardCap: 100,
+            exchangeRate: 3240071022,
           },
         ],
       },

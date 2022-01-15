@@ -161,9 +161,19 @@
     line-height: 22px;
   }
   &__cap-value{
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 700;
+    color: var(--yellow);
+  }
+  &__cap-divider{
+    font-weight: 400;
+  }
+  &__rate{
     font-size: 18px;
     line-height: 21px;
     color: #C5C5DC;
+    margin-bottom: 17px;
   }
   &__progress{
     margin-bottom: 30px;
@@ -175,12 +185,20 @@
     width: 100%;
     background: #2E2E44;
     border-radius: 5px;
-    margin-top: 3px;
+    margin: 4px 0 2px;
     position: relative;
     &--done{
-      margin-top: -9px;
+      margin-top: -11px;
       background: linear-gradient(90deg, #10B880 0%, #167254 100%);
     }
+  }
+  &__progress-values{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: #C5C5DC;
   }
   &__status{
     position: absolute;
@@ -207,6 +225,25 @@
       background: #fff;
       border-radius: 50%;
     }
+  }
+  &__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__sale{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__sale-label{
+    color: #C5C5DC;
+    font-weight: 500;
+  }
+  &__sale-time{
+    color: #DE726B;
+    font-weight: 700;
   }
   &--upcoming{
     .project-card__status{
