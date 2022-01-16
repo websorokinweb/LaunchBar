@@ -53,6 +53,9 @@ export default {
       item.listingRateMask = this.maskText(item.listingRate) + ' ' + item.tokenSymbol
       item.initialMarketCapMask = this.maskText(item.initialMarketCap) + ' ' + item.tokenSymbol
 
+      item.minBuyMask = this.maskText(item.minBuy) + ' ' + item.blockchainSymbol
+      item.maxBuyMask = this.maskText(item.maxBuy) + ' ' + item.blockchainSymbol
+
       return item
     }
   },
@@ -69,6 +72,10 @@ export default {
         softCap: 75,
         hardCap: 150,
         exchangeRate: 5000000000,
+
+        saleType: 'whitelist',
+        minBuy: 0.1,
+        maxBuy: 1,
 
         descr: 'Baby Mafia is a BSC Token that offers BUSD auto-rewards to all holders, and its main utility is that the token will be used as a primary asset to purchase the upcoming Mafia-themed NFT collection.',
         presaleAdress: '0x7Da9aB4Ba28677329Fe1BD7338506EF3E5E0895E',  

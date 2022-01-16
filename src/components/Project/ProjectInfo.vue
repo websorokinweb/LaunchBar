@@ -13,7 +13,7 @@
         ></app-socials>
         <!-- Заполнить app-socials данными тоже -->
         <p class="project-info__descr">
-
+          {{ project.descr }}
         </p>
 
       </div>
@@ -21,34 +21,46 @@
     <ul class="project-info__characters">
       <li class="project-info__characters-item">
         <p class="project-info__characters-label">
-
+          Status
         </p>
-        <p class="project-info__characters-value">
-
-        </p>
-      </li>
-      <li class="project-info__characters-item">
-        <p class="project-info__characters-label">
-
-        </p>
-        <p class="project-info__characters-value">
-          
-        </p>
-      </li>
-      <li class="project-info__characters-item">
-        <p class="project-info__characters-label">
-
-        </p>
-        <p class="project-info__characters-value">
-          
+        <p class="project-info__characters-value"
+        :class="
+          project.status == 'upcoming' ? 'project-info__characters-value--upcoming' :
+          project.status == 'live' ? 'project-info__characters-value--live' : 
+          'project-info__characters-value--ended'
+        "
+        >
+          {{ 
+            project.status == 'upcoming' ? 'Upcoming' :
+            project.status == 'live' ? 'Sale Live' : 
+            'Sale Ended'
+          }}
         </p>
       </li>
       <li class="project-info__characters-item">
         <p class="project-info__characters-label">
-
+          Sale type:
         </p>
         <p class="project-info__characters-value">
-          
+          {{ 
+            project.saleType == 'Whitelist Only'
+          }}
+        </p>
+      </li>
+      <li class="project-info__characters-item">
+        <p class="project-info__characters-label">
+          Minimum Buy:
+        </p>
+        <p class="project-info__characters-value">
+          {{ project.minBuyMask }}
+        </p>
+      </li>
+      <li class="project-info__characters-item">
+        <p class="project-info__characters-label">
+          Maximum Buy:
+        </p>
+        <p class="project-info__characters-value">
+          {{ project.maxBuyMask }}
         </p>
       </li>
     </ul>
@@ -59,6 +71,9 @@
 import AppSocials from '@/components/App/AppSocials.vue';
 
 export default {
+  inject:[
+    'project',
+  ],
   components: {
     AppSocials,
   },
