@@ -16,7 +16,13 @@
         >
           <span class="project-card__imgwrapper">
             <img :src="item.image" alt="">
-            <span class="project-card__status">
+            <span class="project-status"
+            :class="
+              item.status == 'upcoming' ? 'project-status--upcoming' :
+              item.status == 'live' ? 'project-status--live' : 
+              'project-status--ended'
+            "
+            >
               {{ 
                 item.status == 'upcoming' ? 'Upcoming' :
                 item.status == 'live' ? 'Sale Live' : 

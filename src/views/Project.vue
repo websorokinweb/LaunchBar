@@ -63,7 +63,7 @@ export default {
     return {
       item:{
         name: 'BabyMafia',
-        status: 'upcoming',
+        status: 'live',
         image: require('@/assets/images/temp/list-item-1.png'),
         blockchainSymbol: 'BNB',
         tokenSymbol: '$BMF',
