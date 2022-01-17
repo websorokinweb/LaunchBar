@@ -71,9 +71,15 @@
                 <span class="project-card__sale-label">
                   Presale:
                 </span>
-                <span class="project-card__sale-time">
-                  Ended
-                </span>
+                <!-- <span class="project-card__sale-time">
+                  {{ item.presaleStartTime }}
+                </span> -->
+                <vue-countdown
+                :time='difference'
+                v-slot="{ seconds }"
+                >
+                  {{ seconds }}
+                </vue-countdown>
               </span>
               <app-button
               title="View"
@@ -88,7 +94,11 @@
 </template>
 
 <script>
-import maskTextMixin from '@/mixins/maskTextMixin'
+import maskTextMixin from '@/mixins/maskTextMixin';
+
+import VueCountdown from '@chenfengyuan/vue-countdown';
+
+// import moment from 'moment';
 
 export default {
   computed: {
@@ -108,10 +118,16 @@ export default {
         item.exchangeRateMask = this.maskText(item.exchangeRate)
         item.softCapMask = this.maskText(item.softCap)
         item.hardCapMask = this.maskText(item.hardCap)
+        
+        item.presaleStartTime = new Date(item.presaleStartTime)
+        item.difference = item.presaleStartTime - this.dateNow
 
         return item
       })
     }
+  },
+  created () {
+    this.dateNow = new Date()
   },
   mixins:[
     maskTextMixin,
@@ -143,7 +159,8 @@ export default {
             initialMarketCap: 147636,
             unsoldTokens: 'Refund',
 
-            presaleStartTime: '2022.01.12 18:00 (UTC)',
+            // presaleStartTime: '2022.01.12 18:00 (UTC)',
+            presaleStartTime: '2022-01-17T22:53:30',
             presaleEndTime: '2022.01.12 18:00 (UTC)',
 
             listingOn: 'Pancakeswap',
@@ -213,6 +230,9 @@ export default {
         ],
       },
     }
+  },
+  components: {
+    VueCountdown,
   },
 }
 </script>
