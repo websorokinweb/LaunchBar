@@ -74,11 +74,12 @@
                 <!-- <span class="project-card__sale-time">
                   {{ item.presaleStartTime }}
                 </span> -->
+                {{ item.difference }}
                 <vue-countdown
-                :time='difference'
-                v-slot="{ seconds }"
+                :time='item.difference'
+                v-slot="{ days, hours, minutes, seconds }"
                 >
-                  {{ seconds }}
+                  {{ [days, hours, minutes, seconds] }}
                 </vue-countdown>
               </span>
               <app-button
@@ -120,7 +121,7 @@ export default {
         item.hardCapMask = this.maskText(item.hardCap)
         
         item.presaleStartTime = new Date(item.presaleStartTime)
-        item.difference = item.presaleStartTime - this.dateNow
+        item.difference = item.presaleStartTime - this.dateNow 
 
         return item
       })
@@ -178,6 +179,8 @@ export default {
             softCap: 250,
             hardCap: 500,
             exchangeRate: 7347030021,
+
+            presaleStartTime: '2022-01-17T22:53:30',
           },
           {
             name: 'NameProject',
@@ -190,6 +193,8 @@ export default {
             softCap: 50,
             hardCap: 100,
             exchangeRate: 3240071022,
+
+            presaleStartTime: '2022-01-17T22:53:30',
           },
           {
             name: 'NameProject',
@@ -202,6 +207,8 @@ export default {
             softCap: 75,
             hardCap: 150,
             exchangeRate: 5000000000,
+
+            presaleStartTime: '2022-01-17T22:53:30',
           },
           {
             name: 'NameProject',
@@ -214,6 +221,8 @@ export default {
             softCap: 250,
             hardCap: 500,
             exchangeRate: 7347030021,
+
+            presaleStartTime: '2022-01-17T22:53:30',
           },
           {
             name: 'NameProject',
@@ -226,6 +235,8 @@ export default {
             softCap: 50,
             hardCap: 100,
             exchangeRate: 3240071022,
+
+            presaleStartTime: '2022-01-17T22:53:30',
           },
         ],
       },

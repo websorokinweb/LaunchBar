@@ -5,6 +5,12 @@
     <h2 class="project-sale__title">
 
     </h2>
+    <vue-countdown
+    :time="project.difference"
+    v-slot="{ minutes, seconds }"
+    >
+      {{ [minutes, seconds] }}
+    </vue-countdown>
     <p class="project-sale__timer">
 
     </p>
@@ -35,6 +41,8 @@
 <script>
 import axios from 'axios';
 
+import VueCountdown from '@chenfengyuan/vue-countdown';
+
 export default {
   inject:[
     'project',
@@ -48,6 +56,9 @@ export default {
         tooBig: 'Value must be less than max',
       },
     }
+  },
+  created () {
+    this.dateNow = new Date()
   },
   watch: {
     tokenBuy(value){
@@ -77,6 +88,9 @@ export default {
           this.tokenBuy = ''
         })
     }
+  },
+  components: {
+    VueCountdown,
   },
 }
 </script>
