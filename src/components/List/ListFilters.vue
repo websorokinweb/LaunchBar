@@ -48,7 +48,7 @@ export default {
   methods: {
     setSelectValue(value) {
       console.log(value)
-      let index = this.filtersSelects.indexOf(value)
+      let index = this.filtersSelects.options.indexOf(value)
       if (index !== -1){
         this.filters.splice(index, 1)
       } else{
