@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import AppInput from '@/components/App/AppInput.vue';
 import AppSelect from '@/components/App/AppSelect.vue';
 
 export default {
@@ -113,7 +112,6 @@ export default {
     }
   },
   components: {
-    AppInput,
     AppSelect,
   },
 }

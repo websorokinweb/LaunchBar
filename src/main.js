@@ -15,9 +15,11 @@ const app = createApp(App)
 
 import AppButton from './components/App/AppButton'
 import AppLogo from './components/App/AppLogo'
+import AppInput from './components/App/AppInput'
 
 app.component('AppButton', AppButton)
 app.component('AppLogo', AppLogo)
+app.component('AppInput', AppInput)
 
 // Global Components
 

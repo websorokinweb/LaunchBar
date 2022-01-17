@@ -223,8 +223,15 @@
 
 .project{
   &__group{
+    display: flex;
     section:first-child{
+      width: 100%;
       max-width: 730px;
+      margin-right: 30px;
+    }
+    section:nth-child(2){
+      max-width: 350px;
+      width: 100%;
     }
     & + &{
       margin-top: 30px;
@@ -241,6 +248,52 @@
   &__imgwrapper{
     img{
       border-radius: 30px;
+    }
+  }
+}
+
+.project-sale{
+  background: var(--block-bg);
+  box-shadow: 0px 0px 20px -4px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__input-wrapper{
+    position: relative;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  &__max{
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 19px;
+    top: 34px;
+    right: 20px;
+    transition: all .4s;
+    &:hover{
+      color: #fff;
+    }
+  }
+  &__error{
+    font-size: 10px;
+    line-height: 12px;
+    color: #DE726B;
+    margin-left: 18px;
+  }
+  .btn{
+    max-width: 100px;
+    width: 100%;
+  }
+  &--error{
+    .project-sale__error{
+      margin-top: 3px;
+    }
+    .btn{
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(#6232FB, .3) 0%, rgba(#7420C7, .3) 100%);
     }
   }
 }
