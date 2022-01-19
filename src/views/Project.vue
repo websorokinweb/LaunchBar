@@ -15,6 +15,7 @@
       </div>
       <div class="project__group">
         <project-details></project-details>
+        <project-whitelist></project-whitelist>
       </div>
     </div>
   </div>
@@ -24,6 +25,7 @@
 import ProjectInfo from '@/components/Project/ProjectInfo.vue';
 import ProjectSale from '@/components/Project/ProjectSale.vue';
 import ProjectDetails from '@/components/Project/ProjectDetails.vue';
+import ProjectWhitelist from '@/components/Project/ProjectWhitelist.vue';
 
 import maskTextMixin from '@/mixins/maskTextMixin'
 
@@ -55,6 +57,8 @@ export default {
 
       item.minBuyMask = this.maskText(item.minBuy) + ' ' + item.blockchainSymbol
       item.maxBuyMask = this.maskText(item.maxBuy) + ' ' + item.blockchainSymbol
+
+      item.whitelistLength = item.whitelist.length
 
       return item
     }
@@ -95,6 +99,23 @@ export default {
         listingOn: 'Pancakeswap',
         liquadityPercent: 70,
         liquadityLockupTime: '120 days after pool ends',
+
+        whitelist:[
+          '0x73...y956',
+          '0x73...y957',
+          '0x73...y958',
+          '0x73...y959',
+          '0x73...y960',
+          '0x73...y961',
+          '0x73...y962',
+          '0x73...y963',
+          '0x73...y964',
+          '0x73...y965',
+          '0x73...y966',
+          '0x73...y967',
+          '0x73...y968',
+          // 0xd04134ebE25b9be5C3e270761C6b18EE2f587ad6
+        ],
       },
     }
   },
@@ -110,6 +131,7 @@ export default {
     ProjectInfo,
     ProjectSale,
     ProjectDetails,
+    ProjectWhitelist,
   },
 }
 </script>
