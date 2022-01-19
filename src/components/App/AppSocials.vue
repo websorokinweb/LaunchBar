@@ -1,7 +1,7 @@
 <template>
   <ul class="social__list">
     <li class="social__item"
-    v-for='social in socials'
+    v-for='social in items'
     :key='social'
     >
       <router-link class='social__link' :to='social.href'

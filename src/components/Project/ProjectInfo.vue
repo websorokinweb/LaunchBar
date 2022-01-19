@@ -22,9 +22,8 @@
           }}
         </span>
         <app-socials
-
+        :custom="project.socials"
         ></app-socials>
-        <!-- Заполнить app-socials данными тоже -->
         <p class="project-info__descr">
           {{ project.descr }}
         </p>

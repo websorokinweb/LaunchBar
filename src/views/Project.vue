@@ -94,6 +94,24 @@ export default {
         initialMarketCap: 147636.2,
         unsoldTokens: 'Refund',
 
+        socials:[
+          {
+            href: '#',  
+            src: require('@/assets/images/telegram.svg'),
+            type: 'telegram',
+          },
+          {
+            href: '#',
+            src: require('@/assets/images/twitter.svg'),
+            type: 'twitter',
+          },
+          {
+            href: '#',
+            src: require('@/assets/images/discord.svg'),
+            type: 'discord',
+          },
+        ],
+
         presaleStartTime: '2022-01-17T22:53:30',
         presaleEndTime: '2022.01.12 18:00 (UTC)',
 
