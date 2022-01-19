@@ -19,6 +19,8 @@
             title='Launchpad'
             view='blue'
             big
+            link
+            href="/list"
             ></app-button>
           </div>
         </div>

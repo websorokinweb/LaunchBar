@@ -34,6 +34,7 @@
     font-weight: 700;
   }
   &__buttons{
+    display: flex;
     .btn{
       max-width: 190px;
       width: 100%;
