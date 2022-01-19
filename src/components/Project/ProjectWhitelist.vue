@@ -24,7 +24,9 @@
             <span class="project-whitelist__wallet-value">
               {{ item }}
             </span>
-            <button class="project-whitelist__copy btn-clear">
+            <button class="project-whitelist__copy btn-clear"
+            @click="copyWallet(item)"
+            >
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14.5 0H2.5C1.4 0 0.5 0.9 0.5 2V16H2.5V2H14.5V0ZM17.5 4H6.5C5.4 4 4.5 4.9 4.5 6V20C4.5 21.1 5.4 22 6.5 22H17.5C18.6 22 19.5 21.1 19.5 20V6C19.5 4.9 18.6 4 17.5 4ZM17.5 20H6.5V6H17.5V20Z" fill="#C5C5DC"/>
               </svg>
@@ -32,58 +34,72 @@
           </p>
         </li>
       </ul>
-      <pagination v-model="currentPage" :records="project.whitelistLength" :per-page="10" @paginate="myCallback"
+      <pagination v-model="currentPage" :records="project.whitelistLength" :per-page="10" @paginate="getWhitelistPage"
       :options="paginationSetup"
       />
-      <!-- :options="
-      {
-        hideCount: true,
-        edgeNavigation: false,
-        template: this.ProjectCustomPagination,
-      } -->
     </div>
   </section>
 </template>
 
 <script>
+import axios from 'axios';
 import Pagination from 'v-pagination-3';
 
 import ProjectCustomPagination from '@/components/Project/ProjectCustomPagination.vue';
 
 export default {
   setup () {
-    const paginationSetup = 
+    let paginationSetup = 
       {
         template: ProjectCustomPagination,
-      }
+        chunk: 3,
+        chunksNavigation: 'scroll',
+      };
   
     return {
       paginationSetup,
     }
   },
+  beforeMount () {
+    this.getWhitelistPage(1)
+  },
   data() {
     return {
       currentPage: 1,
       totalPages: 3,
-      arrayData: [
-        {
-          data: 'Page № 1'
-        },
-        {
-          data: 'Page № 2'
-        },
-        {
-          data: 'Page № 3'
-        },
-      ],
     }
   },
   inject:[
     'project',
   ],
   methods: {
-    myCallback(e) {
-      console.log(e)
+    copyWallet(value){
+      const el = document.createElement('textarea');
+      el.value = value;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    },
+    getWhitelistPage(e) {
+      // Убрать
+      this.project.whitelist = [
+          '0x73...y956',
+          '0x73...y957',
+          '0x73...y958',
+          '0x73...y959',
+          '0x73...y960',
+          '0x73...y961',
+          '0x73...y962',
+          '0x73...y963',
+          '0x73...y964',
+          '0x73...y965',
+        ]
+
+      axios.get('/project/' + this.project.id + '/whitelist?page=' + e)
+        .then(function (response) {
+          this.project.whitelist = response
+        })
     }
   },
   components: {

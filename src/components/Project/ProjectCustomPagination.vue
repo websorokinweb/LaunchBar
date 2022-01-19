@@ -16,6 +16,8 @@
           :key="page"
           :class="props.pageClasses(page)"
           v-on="props.pageEvents(page)"
+
+          class="VuePagination__pagination-page"
         >
           <button type="button" v-bind="props.aProps" :class="props.theme.link">
             {{ page }}

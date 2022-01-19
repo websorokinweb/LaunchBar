@@ -56,7 +56,7 @@
         </p>
         <p class="project-info__characters-value project-info__characters-value--type">
           {{ 
-            project.saleType == 'whitelist' ? 'Whitelist Only' : 'null'
+            project.useWhitelist ? 'Whitelist Only' : 'Open to everyone'
           }}
         </p>
       </li>

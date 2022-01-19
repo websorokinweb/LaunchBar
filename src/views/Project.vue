@@ -15,7 +15,9 @@
       </div>
       <div class="project__group">
         <project-details></project-details>
-        <project-whitelist></project-whitelist>
+        <project-whitelist
+        v-if="item.useWhitelist"
+        ></project-whitelist>
       </div>
     </div>
   </div>
@@ -58,14 +60,13 @@ export default {
       item.minBuyMask = this.maskText(item.minBuy) + ' ' + item.blockchainSymbol
       item.maxBuyMask = this.maskText(item.maxBuy) + ' ' + item.blockchainSymbol
 
-      item.whitelistLength = item.whitelist.length
-
       return item
     }
   },
   data() {
     return {
       item:{
+        id: 24,
         name: 'BabyMafia',
         status: 'live',
         image: require('@/assets/images/temp/list-item-1.png'),
@@ -77,7 +78,7 @@ export default {
         hardCap: 150,
         exchangeRate: 5000000000,
 
-        saleType: 'whitelist',
+        useWhitelist: false,
         minBuy: 0.1,
         maxBuy: 1,
 
@@ -100,35 +101,7 @@ export default {
         liquadityPercent: 70,
         liquadityLockupTime: '120 days after pool ends',
 
-        whitelist:[
-          '0x73...y956',
-          '0x73...y957',
-          '0x73...y958',
-          '0x73...y959',
-          '0x73...y960',
-          '0x73...y961',
-          '0x73...y962',
-          '0x73...y963',
-          '0x73...y964',
-          '0x73...y965',
-          '0x73...y966',
-          '0x73...y967',
-          '0x73...y968',
-          '0x73...y969',
-          '0x73...y970',
-          '0x73...y971',
-          '0x73...y972',
-          '0x73...y973',
-          '0x73...y974',
-          '0x73...y975',
-          '0x73...y976',
-          '0x73...y977',
-          '0x73...y978',
-          '0x73...y979',
-          '0x73...y980',
-          '0x73...y981',
-          // 0xd04134ebE25b9be5C3e270761C6b18EE2f587ad6
-        ],
+        whitelistLength: 35,
       },
     }
   },
