@@ -43,6 +43,25 @@
       margin-left: 30px;
     }
   }
+  &__imgwrapper{
+    img{
+      animation-play-state: running;
+      animation-name: moves;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+  }
+}
+
+@keyframes moves {
+  0%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(-20px);
+  }
 }
 
 .index-info{
@@ -120,6 +139,10 @@
   background: #212132;
   box-shadow: 0px 0px 20px -4px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
+  transition: all .3s;
+  &:hover{
+    transform: translateY(-12px);
+  }
   .btn{
     max-width: 100px;
     width: 100%;
@@ -184,13 +207,32 @@
   &__progress-line{
     height: 9px;
     width: 100%;
-    background: #2E2E44;
+    background-color: #2E2E44;
     border-radius: 5px;
     margin: 4px 0 2px;
     position: relative;
     &--done{
       margin-top: -11px;
-      background: linear-gradient(90deg, #10B880 0%, #167254 100%);
+      // background: linear-gradient(90deg, #10B880 0%, #167254 100%);
+      background-size: 30px 30px;
+      // background-image: linear-gradient(
+      //   45deg,
+      //   #10B880 25%,
+      //   #10B880 25%,
+      //   #167254 50%,
+      //   #10B880 50%,
+      //   #167254 75%,
+      //   #167254 75%,
+      //   #167254
+      // );
+      background-image: repeating-linear-gradient(
+        45deg,
+        #10b864 20%,
+        #0b7e44 50%,
+        #10B880 50%,
+        #167254 70%
+      );
+      animation: animate-stripes .6s linear infinite;
     }
   }
   &__progress-values{
@@ -219,6 +261,16 @@
   &__sale-time{
     color: #DE726B;
     font-weight: 700;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
   }
 }
 
