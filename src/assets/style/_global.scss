@@ -557,24 +557,24 @@ menu{
   border-radius: 25px;
 }
 
-.Pagination{
-  justify-content: center;
-  .Page{
-    border: 2px solid #6333FF;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-    line-height: 23px;
-    font-weight: 700;
-    &:hover{
-      border: 2px solid #4f1cf5;
-    }
-    &.Page-active{
-      background: rgba(99, 51, 255, 0.42) !important;
-    }
-  }
+// .Pagination{
+//   justify-content: center;
+//   .Page{
+//     border: 2px solid #6333FF;
+//     width: 42px;
+//     height: 42px;
+//     border-radius: 50%;
+//     color: #fff;
+//     font-size: 20px;
+//     line-height: 23px;
+//     font-weight: 700;
+//     &:hover{
+//       border: 2px solid #4f1cf5;
+//     }
+//     &.Page-active{
+//       background: rgba(99, 51, 255, 0.42) !important;
+//     }
+//   }
   // .PaginationControl{
   //   width: 42px;
   //   height: 42px;
@@ -589,33 +589,33 @@ menu{
   //     height: 33px;
   //   }
   // }
-  .PaginationControl{
-    position: relative;
-  }
-  .Control{
-    fill: rgba(162, 162, 162, 0.42) !important;
-    width: 33px;
-    height: 33px;
-    position: static;
-    &:after{
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 2px solid rgba(162, 162, 162, 0.42);
-      background: red;
-    }
-    &.Control-active{
-      fill: #fff !important;
-      &:after{
-        border-color: #fff;
-      }
-    }
-  }
-}
+//   .PaginationControl{
+//     position: relative;
+//   }
+//   .Control{
+//     fill: rgba(162, 162, 162, 0.42) !important;
+//     width: 33px;
+//     height: 33px;
+//     position: static;
+//     &:after{
+//       content: '';
+//       position: absolute;
+//       left: 0;
+//       top: 0;
+//       width: 42px;
+//       height: 42px;
+//       border-radius: 50%;
+//       border: 2px solid rgba(162, 162, 162, 0.42);
+//       background: red;
+//     }
+//     &.Control-active{
+//       fill: #fff !important;
+//       &:after{
+//         border-color: #fff;
+//       }
+//     }
+//   }
+// }
 
 .VuePagination__pagination{
   display: flex;
@@ -623,6 +623,12 @@ menu{
   align-items: center;
 }
 .VuePagination__pagination-item{
+  margin: 0 5px;
+  &.active{
+    .page-link{
+      background: rgba(99, 51, 255, 0.42) !important;
+    }
+  }
   .page-link{
     border: 2px solid #6333FF;
     width: 42px;
@@ -636,8 +642,53 @@ menu{
     &:hover{
       border: 2px solid #4f1cf5;
     }
-    &.active{
-      background: rgba(99, 51, 255, 0.42) !important;
+  }
+}
+.VuePagination__pagination-item-prev-page,
+.VuePagination__pagination-item-next-page{
+  .page-link{
+    cursor: pointer;
+    border-color: #DDD3FE;
+    display: flex;
+    align-items: center;
+    padding: 12px 14px 12px 12px;
+    svg{
+      height: 17px;
+      width: 20px;
+      path{
+        fill: #DDD3FE;
+      }
+    }
+    &:hover{
+      border-color: rgba(#DDD3FE, .8);
+      svg{
+        path{
+          fill: rgba(#DDD3FE, .8);
+        }
+      }
+    }
+  }
+  &.disabled{
+    .page-link{
+      cursor: default;
+      border-color: rgba(162, 162, 162, 0.42);
+      svg{
+        path{
+          fill: rgba(162, 162, 162, 0.3);
+        }
+      }
+    }
+  }
+}
+.VuePagination__pagination-item-prev-page{
+  margin-left: 0;
+}
+.VuePagination__pagination-item-next-page{
+  margin-right: 0;
+  .page-link{
+    padding: 12px 12px 12px 14px;
+    svg{
+      transform: scaleX(-1);
     }
   }
 }

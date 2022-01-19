@@ -32,14 +32,15 @@
           </p>
         </li>
       </ul>
-      <pagination v-model="currentPage" :records="400" :per-page="10" @paginate="myCallback"
-      :options="
+      <pagination v-model="currentPage" :records="project.whitelistLength" :per-page="10" @paginate="myCallback"
+      :options="paginationSetup"
+      />
+      <!-- :options="
       {
         hideCount: true,
-
-      }
-      "
-      />
+        edgeNavigation: false,
+        template: this.ProjectCustomPagination,
+      } -->
     </div>
   </section>
 </template>
@@ -47,7 +48,19 @@
 <script>
 import Pagination from 'v-pagination-3';
 
+import ProjectCustomPagination from '@/components/Project/ProjectCustomPagination.vue';
+
 export default {
+  setup () {
+    const paginationSetup = 
+      {
+        template: ProjectCustomPagination,
+      }
+  
+    return {
+      paginationSetup,
+    }
+  },
   data() {
     return {
       currentPage: 1,
