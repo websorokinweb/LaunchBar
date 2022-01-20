@@ -71,16 +71,14 @@
                 <span class="project-card__sale-label">
                   Presale:
                 </span>
-                <!-- <span class="project-card__sale-time">
+                <span class="project-card__sale-time">
                   {{ item.presaleStartTime }}
-                </span> -->
-                {{ item.difference }}
-                <vue-countdown
-                :time='item.difference'
-                v-slot="{ days, hours, minutes, seconds }"
-                >
-                  {{ [days, hours, minutes, seconds] }}
-                </vue-countdown>
+                </span>
+                <Countdown 
+                :deadlineDate="item.presaleStartTime"
+                :flipAnimation="false"
+                :showLabels="false"
+                />
               </span>
               <app-button
               title="View"
@@ -97,9 +95,7 @@
 <script>
 import maskTextMixin from '@/mixins/maskTextMixin';
 
-import VueCountdown from '@chenfengyuan/vue-countdown';
-
-// import moment from 'moment';
+import {Countdown} from 'vue3-flip-countdown';
 
 export default {
   computed: {
@@ -121,14 +117,11 @@ export default {
         item.hardCapMask = this.maskText(item.hardCap)
         
         item.presaleStartTime = new Date(item.presaleStartTime)
-        item.difference = item.presaleStartTime - this.dateNow 
+        // item.difference = item.presaleStartTime - this.dateNow 
 
         return item
       })
     }
-  },
-  created () {
-    this.dateNow = new Date()
   },
   mixins:[
     maskTextMixin,
@@ -161,7 +154,7 @@ export default {
             unsoldTokens: 'Refund',
 
             // presaleStartTime: '2022.01.12 18:00 (UTC)',
-            presaleStartTime: '2022-01-17T22:53:30',
+            presaleStartTime: '2022-01-21T22:53:30',
             presaleEndTime: '2022.01.12 18:00 (UTC)',
 
             listingOn: 'Pancakeswap',
@@ -180,7 +173,7 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-17T22:53:30',
+            presaleStartTime: '2022-01-21T22:53:30',
           },
           {
             name: 'NameProject',
@@ -194,7 +187,7 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-17T22:53:30',
+            presaleStartTime: '2022-01-21T22:53:30',
           },
           {
             name: 'NameProject',
@@ -208,7 +201,7 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-17T22:53:30',
+            presaleStartTime: '2022-01-21T22:53:30',
           },
           {
             name: 'NameProject',
@@ -222,7 +215,7 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-17T22:53:30',
+            presaleStartTime: '2022-01-21T22:53:30',
           },
           {
             name: 'NameProject',
@@ -236,14 +229,14 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-17T22:53:30',
+            presaleStartTime: '2022-01-21T22:53:30',
           },
         ],
       },
     }
   },
   components: {
-    VueCountdown,
+    Countdown,
   },
 }
 </script>

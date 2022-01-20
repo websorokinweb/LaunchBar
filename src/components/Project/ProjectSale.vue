@@ -3,16 +3,14 @@
   :class="errorText ? 'project-sale--error' : ''"
   >
     <h2 class="project-sale__title">
-
+      Presale Starts In:
     </h2>
-    <vue-countdown
-    :time="project.difference"
-    v-slot="{ minutes, seconds }"
-    >
-      {{ [minutes, seconds] }}
-    </vue-countdown>
     <p class="project-sale__timer">
-
+      <Countdown 
+      :deadlineDate="project.presaleStartTime"
+      :flipAnimation="false"
+      :showLabels="false"
+      />
     </p>
     <div class="project-sale__input-wrapper">
       <app-input
@@ -41,7 +39,7 @@
 <script>
 import axios from 'axios';
 
-import VueCountdown from '@chenfengyuan/vue-countdown';
+import {Countdown} from 'vue3-flip-countdown'
 
 export default {
   inject:[
@@ -56,9 +54,6 @@ export default {
         tooBig: 'Value must be less than max',
       },
     }
-  },
-  created () {
-    this.dateNow = new Date()
   },
   watch: {
     tokenBuy(value){
@@ -83,14 +78,14 @@ export default {
       this.tokenBuy = ''
 
       // Расскоментировать
-      axios.post('/buy', this.tokenBuy)
+      axios.post('/buy/' + this.project.id, this.tokenBuy)
         .then(function() {
           this.tokenBuy = ''
         })
     }
   },
   components: {
-    VueCountdown,
+    Countdown,
   },
 }
 </script>

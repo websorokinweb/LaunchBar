@@ -59,6 +59,8 @@ export default {
 
       item.minBuyMask = this.maskText(item.minBuy) + ' ' + item.blockchainSymbol
       item.maxBuyMask = this.maskText(item.maxBuy) + ' ' + item.blockchainSymbol
+     
+      item.presaleStartTime = new Date(item.presaleStartTime)
 
       return item
     }
@@ -94,6 +96,8 @@ export default {
         initialMarketCap: 147636.2,
         unsoldTokens: 'Refund',
 
+
+
         socials:[
           {
             href: '#',  
@@ -112,7 +116,7 @@ export default {
           },
         ],
 
-        presaleStartTime: '2022-01-17T22:53:30',
+        presaleStartTime: '2022-01-21T22:53:30',
         presaleEndTime: '2022.01.12 18:00 (UTC)',
 
         listingOn: 'Pancakeswap',
