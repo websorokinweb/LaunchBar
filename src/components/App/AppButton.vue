@@ -1,6 +1,6 @@
 <template>
   <button
-  v-if='!link'
+  v-if='!link && !innerLink'
   class='btn'
   :class='[useStyle, this.big ? "btn--big" : ""]'
   :type='btnType'

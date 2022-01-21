@@ -90,13 +90,13 @@ export default {
         if(this.data.currWallet.value === 'metamask'){
           return 'https://metamask.io/faqs.html'
         }
-        return 'https://community.trustwallet.com/c/faq/21'
+        return 'https://nearhelp.zendesk.com/hc/en-us'
       }
 
       if(this.currentWallet.value === 'metamask'){
         return 'https://metamask.io/faqs.html'
       }
-      return 'https://community.trustwallet.com/c/faq/21'
+      return 'https://nearhelp.zendesk.com/hc/en-us'
     },
   },
   methods: {

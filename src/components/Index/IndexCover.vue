@@ -11,9 +11,11 @@
           </p>
           <div class="index-cover__buttons">
             <app-button
-            title='Create'
             view='yellow'
             big
+            innerLink
+            title="Create"
+            href="gfgffg/"
             ></app-button>
             <app-button
             title='Launchpad'

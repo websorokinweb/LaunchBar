@@ -59,9 +59,10 @@ const state = {
       image: require('@/assets/images/wallet-metamask.png')
     },
     {
-      label: 'Trust Wallet',
-      value: 'trustwallet',
-      image: require('@/assets/images/wallet-trustwallet.png')
+      label: 'Near wallet',
+      value: 'nearwallet',
+      image: require('@/assets/images/blockchain-near.svg'),
+      darkImage: require('@/assets/images/blockchain-near.svg'),
     },
   ],
   currentBlockchain: {

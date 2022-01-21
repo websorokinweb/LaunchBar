@@ -595,6 +595,14 @@
   //   position: relative;
   //   z-index: 3;
   // }
+  .btn--lined{
+    height: 40px;
+    max-width: 140px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   &__inner{
     display: flex;
     justify-content: flex-end;
@@ -653,37 +661,36 @@
   &__wallets{
     position: relative;
     font-family: "Roboto", sans-serif;
-    background: #322361;
-    padding-left: 21px;
-    padding-right: 21px;
-    font-size: 18px;
-    line-height: 21px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+    line-height: 19px;
     font-weight: 500;
     position: relative;
-    background-clip: padding-box;
-    border: solid 2px transparent;
+    // background-clip: padding-box;
+    // border: solid 2px transparent;
     height: 40px;
     border-radius: 20px;
     color: #fff;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: -2px;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #EE4EFE 0%, #853CFF 100%);
-    }
-    &:after{
-      transition: all .4s;
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: -2px;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #EE4EFE 0%, #853CFF 100%);
-    }
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0; right: 0; bottom: 0; left: 0;
+    //   z-index: -1;
+    //   margin: -2px;
+    //   border-radius: inherit;
+    //   background: linear-gradient(90deg, #EE4EFE 0%, #853CFF 100%);
+    // }
+    // &:after{
+    //   transition: all .4s;
+    //   content: '';
+    //   position: absolute;
+    //   top: 0; right: 0; bottom: 0; left: 0;
+    //   z-index: -1;
+    //   margin: -2px;
+    //   border-radius: inherit;
+    //   background: linear-gradient(90deg, #EE4EFE 0%, #853CFF 100%);
+    // }
     &--connected{
       display: flex;
       align-items: center;
@@ -710,11 +717,6 @@
       }
     }
   }
-  &__blockchain{
-    margin-right: 21px;
-    position: relative;
-    margin-left: 15px;
-  }
   &__blockchain-preview{
     display: flex;
     justify-content: space-between;
@@ -724,30 +726,32 @@
     padding-right: 7px;
   }
   &__blockchain{
-    margin-right: 25px;
     position: relative;
+    margin: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 165px;
     width: 100%;
-    background: #322361;
+    // background: #322361;
     height: 40px;
     border-radius: 20px;
     padding: 2px;
-    background-clip: padding-box;
-    border: solid 2px transparent;
-    font-size: 12px;
-    line-height: 14px;
+    // background-clip: padding-box;
+    // border: solid 2px transparent;
+    font-size: 14px;
+    line-height: 16px;
     font-family: "Roboto", sans-serif;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: -2px;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #EE4EFE 0%, #853CFF 100%);
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0; right: 0; bottom: 0; left: 0;
+    //   z-index: -1;
+    //   margin: -2px;
+    //   border-radius: inherit;
+    //   background: linear-gradient(90deg, #EE4EFE 0%, #853CFF 100%);
+    // }
+    &.btn--lined{
+      max-width: 165px;
     }
   }
   &__blockchain-icon{
@@ -762,7 +766,7 @@
     justify-content: center;
     align-items: center;
     // color: $addit;
-    // background: $secondary;
+    background: #2E2E3A;
     padding: 5px 6px;
     margin-left: 0;
     margin-right: auto;
@@ -774,6 +778,7 @@
   }
   &__blockchain-name{
     color: #fff;
+    font-weight: 500;
   }
   &__blockchain-arrow{
     position: absolute;
@@ -785,8 +790,8 @@
     width: 40px;
     height: 40px;
     padding: 8px;
-    margin-left: 25px;
-    background: linear-gradient(135deg, #F24EFE 0%, #813BFF 100%);
+    margin-left: 20px;
+    background: linear-gradient(180deg, #6131FA 0%, #4720C7 100%);
     transition: all .4s;
     border-radius: 50%;
   }
@@ -828,7 +833,6 @@
     max-width: 40px;
     height: 40px;
   }
-  .profile,
   .profile__imgwrapper{
     background: transparent;
   }
@@ -1005,10 +1009,10 @@
   top: 50px;
   right: 0;
   // background-color: $modal-bg;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   padding: 22px 12px 17px;
-  border: 1px solid #5D5A7A;
+  // border: 1px solid #5D5A7A;
   // color: $secondary;
   cursor: default;
   z-index: 3;
@@ -1016,6 +1020,10 @@
   transition: all .4s;
   pointer-events: none;
   min-width: 350px;
+
+  background: #1D1831;
+  border: 2px solid #6333FF;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   &__pad{
     position: fixed;
     top: 0;
@@ -1748,8 +1756,8 @@
     pointer-events: all;
   }
   &__title{
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 19px;
     font-weight: 700;
     margin-bottom: 15px;
     margin-left: 12px;
@@ -1824,8 +1832,8 @@
     pointer-events: all;
   }
   &__title{
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 19px;
     font-weight: 700;
     color: #fff;
   }
@@ -1843,8 +1851,29 @@
     align-items: center;
     justify-content: center;
     height: 80px;
-    border: 2px solid transparent;
+    // border: 2px solid transparent;
+    position: relative;
     transition: all .3s;
+    position: relative;
+    &:after{
+      transition: all .4s;
+      opacity: 0;
+      content:"";
+      position: absolute;
+      border-radius: inherit; 
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.3px; 
+      z-index: 1;
+      background: linear-gradient(180deg, #6231FA 0%, #7320C7 100%); 
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out; 
+      mask-composite: exclude; 
+    }
     img{
       max-width: 39px;
       max-height: 39px;
@@ -1872,7 +1901,9 @@
     position: absolute;
     opacity: 0;
     &:checked ~ .blockchains__imgwrapper{
-      border-color: $pink;
+      &:after{
+        opacity: 1;
+      }
     }
   }
 }
@@ -1930,8 +1961,28 @@
     justify-content: center;
     height: 80px;
     width: 80px;
-    border: 2px solid transparent;
+    // border: 2px solid transparent;
     transition: all .3s;
+    position: relative;
+    &:after{
+      transition: all .4s;
+      opacity: 0;
+      content:"";
+      position: absolute;
+      border-radius: inherit; 
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.3px; 
+      z-index: 1;
+      background: linear-gradient(180deg, #6231FA 0%, #7320C7 100%); 
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out; 
+      mask-composite: exclude; 
+    }
     img{
       max-width: 39px;
       max-height: 39px;
@@ -1944,27 +1995,30 @@
     display: flex;
     .btn{
       width: 100%;
-      // background: linear-gradient(90deg, #DF4AFE 0%, #943EFE 100%);
       margin-left: 0;
+      background: linear-gradient(90deg, #6131FA 0%, #4720C7 100%);
       &:hover{
-        // background: linear-gradient(94.42deg, rgba(245, 79, 254, 0.7) 2.5%, rgba(121, 58, 255, 0.7) 99.28%);
+        background: linear-gradient(90deg, rgba(#6131FA, .8) 0%, rgba(#4720C7, .8) 100%);
       }
     }
   }
   &__link{
-    font-weight: 500;
+    font-weight: 700;
     color: #fff;
     font-size: 21px;
     line-height: 25px;
-    // background: linear-gradient(135deg, #DA49FE 0%, #953EFE 100%);
-    background: var(--pink);
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 40px;
+    max-width: 30px;
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 50%;
+    margin-right: 16px;
+    background: linear-gradient(135deg, #6031F9 0%, #4720C7 100%);
+    &:hover{
+      background: linear-gradient(135deg, rgba(#6031F9, .8) 0%, rgba(#4720C7, .8) 100%);
+    }
   }
   .label{
     cursor: pointer;
@@ -1974,6 +2028,7 @@
   .label-text{
     font-family: "Roboto", sans-serif;
     margin-top: 8px;
+    margin-bottom: 0;
     font-size: 12px;
     line-height: 14px;
     margin-left: 0;
@@ -1983,7 +2038,10 @@
     position: absolute;
     opacity: 0;
     &:checked ~ .wallets__imgwrapper{
-      border-color: var(--pink);
+      // border-color: var(--pink);
+      &:after{
+        opacity: 1;
+      }
     }
     // &:checked ~ .wallets__imgwrapper{
     //   &:after{

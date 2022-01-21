@@ -3,7 +3,7 @@
     <div class="container">
       <ul class="index-info__items">
         <li class="index-info__item block"
-        v-for='item in info.items'
+        v-for='(item, index) in info.items'
         :key="item"
         >
           <p class="index-info__title">
@@ -15,7 +15,8 @@
           <app-button
           :title="item.btnTitle"
           big
-          link
+          :innerLink="index === 0"
+          :link="index !== 0"
           :href="item.href"
           ></app-button>
         </li>
@@ -44,7 +45,7 @@ export default {
             title: 'Add project',
             descr: 'The interface is as simple and intuitive as possible. To launch a project, it is enough to submit a request by clicking on the Create button.',
             btnTitle: 'Create Project',
-            href: '',
+            href: '/gfgffg',
           },
           {
             title: 'Buy tokens',

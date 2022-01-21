@@ -3,7 +3,13 @@
     <div class="container">
       <div class="header__inner">
         <app-logo></app-logo>
-        <button class="header__blockchain btn-clear"
+        <app-button
+        innerLink
+        view="lined"
+        title="Create"
+        href="gfgffg/"
+        ></app-button>
+        <button class="header__blockchain btn btn--lined"
         :class='openedBlockchains !== false ? "header__blockchain--active" : ""'
         @click='togglePopUpBlockchains'
         >
@@ -11,7 +17,7 @@
           :opened='openedBlockchains'
           ></header-blockchains>
           <div class="header__blockchain-icon">
-            <img :src="currentBlockchain.imageMin" alt=""
+            <img :src="currentBlockchain.image" alt=""
             v-if="currentBlockchain.value === 'near'"
             >
             <img :src="currentBlockchain.image" alt=""
@@ -25,12 +31,12 @@
             <img src="@/assets/images/arrow.svg" alt="">
           </div>
         </button>
-        <button class="header__wallets btn-clear"
+        <button class="header__wallets btn btn--blue"
         :class='[walletIsOpen, walletIsConnected]'
         @click='[togglePopUpWallets(), copyWalletId()]'
         >
           <span>
-            {{ walletConnected ? walletMin : 'Connect Wallet' }}
+            {{ walletConnected ? walletMin : 'Connect' }}
           </span>
           <span class="header__wallets-imgwrapper"
           v-if="walletConnected"
@@ -45,6 +51,7 @@
         <button class="header__profile btn-clear"
         :class='openedProfile !== false ? "header__profile--active" : ""'
         @click='togglePopUpProfile'
+        v-if="walletConnected"
         >
           <img src="@/assets/images/user.svg" alt=""
           v-if="user.logo.src === ''"
@@ -72,7 +79,7 @@
     @click='toggleMenu()'
     >
       <button class="header__blockchain btn-clear"
-      :class='openedBlockchains !== false ? "header__blockchain--active" : ""'
+      :class='openedBlockchains ? "header__blockchain--active" : ""'
       @click.stop='togglePopUpBlockchains'
       >
         <header-blockchains
@@ -98,7 +105,7 @@
       @click.stop='togglePopUpWallets'
       >
         <span>
-          {{ walletConnected ? walletMin : 'Connect Wallet' }}
+          {{ walletConnected ? walletMin : 'Connect' }}
         </span>
         <span class="header__wallets-imgwrapper"
         v-if="walletConnected"
