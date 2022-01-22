@@ -16,6 +16,7 @@
     "normalize.css": "^8.0.1",
     "v-pagination-3": "^0.1.7",
     "vue": "^3.2.27",
+    "vue-metamask": "^2.1.0",
     "vue-router": "^4.0.0-0",
     "vue3-flip-countdown": "^0.1.6",
     "vuex": "^4.0.0-0"

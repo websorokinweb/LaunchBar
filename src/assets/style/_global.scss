@@ -347,6 +347,49 @@ menu{
   }
 }
 
+.progress{
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.progress-line{
+  height: 9px;
+  width: 100%;
+  background-color: #2E2E44;
+  border-radius: 5px;
+  margin: 4px 0 2px;
+  position: relative;
+  &--done{
+    margin-top: -11px;
+    // background: linear-gradient(90deg, #10B880 0%, #167254 100%);
+    background-size: 30px 30px;
+    // background-image: repeating-linear-gradient(
+    //   135deg,
+    //   #10b864 20%,
+    //   #0b7e44 50%,
+    //   #10B880 50%,
+    //   #167254 70%
+    // );
+    background-image: repeating-linear-gradient(
+      135deg,
+      #10B880 20%,
+      #10B880 50%,
+      #167254 50%,
+      #167254 70%
+    );
+    animation: animate-stripes 4s linear infinite;
+  }
+}
+.progress-values{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 16px;
+  color: #C5C5DC;
+}
+
 .profile{
   display: flex;
   flex-direction: column;

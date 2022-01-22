@@ -49,19 +49,19 @@
             <span class="project-card__rate">
               {{ 1 + ' ' + item.blockchainSymbol + ' = ' + item.exchangeRateMask + ' ' + item.tokenSymbol }}
             </span>
-            <span class="project-card__progress">
+            <span class="progress">
               <span class="project-card__progress-label project-card__label">
                 {{ 'Progress: (' + item.progressMask + ')' }}
               </span>
-              <span class="project-card__progress-line"></span>
-              <span class="project-card__progress-line project-card__progress-line--done"
+              <span class="progress-line"></span>
+              <span class="progress-line progress-line--done"
               :style="item.lineProgress"
               ></span>
-              <span class="project-card__progress-values">
-                <span class="project-card__progress-value">
+              <span class="progress-values">
+                <span class="progress-value">
                   {{ item.collected + ' ' + item.blockchainSymbol }}
                 </span>
-                <span class="project-card__progress-value">
+                <span class="progress-value">
                   {{ item.hardCapMask + ' ' + item.blockchainSymbol}}
                 </span>
               </span>

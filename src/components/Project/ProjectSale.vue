@@ -12,6 +12,20 @@
       :showLabels="false"
       />
     </p>
+    <div class="progress">
+      <span class="progress-line"></span>
+      <span class="progress-line progress-line--done"
+      :style="project.lineProgress"
+      ></span>
+      <span class="progress-values">
+        <span class="progress-value">
+          {{ project.collected + ' ' + project.blockchainSymbol }}
+        </span>
+        <span class="progress-value">
+          {{ project.hardCap + ' ' + project.blockchainSymbol}}
+        </span>
+      </span>
+    </div>
     <div class="project-sale__input-wrapper">
       <app-input
       descr="Amount"

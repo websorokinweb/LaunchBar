@@ -31,10 +31,15 @@
         <a class="wallets__link" :href="currentFaqLink" target="_blank">
           ?
         </a>
-        <app-button
-        title='Confirm'
-        @click='[togglePopUpWallets(), connectWallet()]'
-        ></app-button>
+          <app-button
+          title='Confirm'
+          @click='[togglePopUpWallets(), connectWallet()]'
+          ></app-button>
+        <!-- <vue-metamask
+        userMessage="msg" 
+        @onComplete="onComplete"
+        >
+        </vue-metamask> -->
       </div>
     </div>
   </div>
@@ -56,6 +61,8 @@
 import AppInput from '@/components/App/AppInput.vue';
 
 import { mapGetters, mapMutations } from "vuex";
+
+// import VueMetamask from 'vue-metamask';
 
 export default {
   props: {
@@ -119,6 +126,9 @@ export default {
       this.setNewWallet(this.data.currWallet)
       this.togglePopUpWallets()
     },
+    onComplete(data){
+      console.log('data:', data);
+    },
     ...mapMutations([
       'setNewWallet',
       'connectWallet',
@@ -128,6 +138,7 @@ export default {
   },
   components: {
     AppInput,
+    // VueMetamask,
   },
 }
 </script>

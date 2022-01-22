@@ -121,7 +121,7 @@
           Presale Start Time
         </p>
         <span class="project-details__value">
-          {{ project.presaleStartTime }}
+          {{ project.presaleStartTimeMask }}
         </span>
       </li>
       <li class="project-details__item">

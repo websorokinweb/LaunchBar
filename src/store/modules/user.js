@@ -22,8 +22,10 @@ const mutations = {
     state.user = JSON.parse(JSON.stringify(payload))
   },
 
-  connectWallet(state){
-    state.wallet.id = 'anvc6-vxkdpwn2ks2rm4l-gae'
+  // connectWallet(state){
+  connectWallet(){
+
+    // state.wallet.id = 'anvc6-vxkdpwn2ks2rm4l-gae'
   },
   quitWallet(state){
     state.wallet = {id: ''}

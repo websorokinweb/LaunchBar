@@ -199,47 +199,6 @@
     color: #C5C5DC;
     margin-bottom: 17px;
   }
-  &__progress{
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-  &__progress-line{
-    height: 9px;
-    width: 100%;
-    background-color: #2E2E44;
-    border-radius: 5px;
-    margin: 4px 0 2px;
-    position: relative;
-    &--done{
-      margin-top: -11px;
-      // background: linear-gradient(90deg, #10B880 0%, #167254 100%);
-      background-size: 30px 30px;
-      // background-image: repeating-linear-gradient(
-      //   135deg,
-      //   #10b864 20%,
-      //   #0b7e44 50%,
-      //   #10B880 50%,
-      //   #167254 70%
-      // );
-      background-image: repeating-linear-gradient(
-        135deg,
-        #10B880 20%,
-        #10B880 50%,
-        #167254 50%,
-        #167254 70%
-      );
-      animation: animate-stripes 4s linear infinite;
-    }
-  }
-  &__progress-values{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    line-height: 16px;
-    color: #C5C5DC;
-  }
   &__footer{
     display: flex;
     justify-content: space-between;
@@ -406,7 +365,7 @@
     }
   }
   &__timer{
-    margin-bottom: 11px;
+    margin-bottom: 7px;
   }
   .flip-clock{
     .no-animation__card{
@@ -433,6 +392,13 @@
       line-height: 33px;
       font-weight: 700;
     }
+  }
+  .progress{
+    margin-bottom: 19px;
+    font-weight: 400;
+  }
+  .progress-value{
+    margin-top: 2px;
   }
 }
 
@@ -782,7 +748,7 @@
   }
   &__blockchain-arrow{
     position: absolute;
-    top: 13px;
+    top: 12px;
     right: 14px;
   }
   &__profile{
