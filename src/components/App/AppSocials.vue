@@ -4,11 +4,12 @@
     v-for='social in items'
     :key='social'
     >
-      <router-link class='social__link' :to='social.href'
+      <a class='social__link' :href='social.href'
       :class='social.type == "telegram" ? "social__link--telegram" : ""'
+      target="_blank"
       >
         <img :src="social.src" alt="">
-      </router-link>
+      </a>
     </li>
   </ul>
 </template>
@@ -30,7 +31,7 @@ export default {
     return {
       socials:[
         {
-          href: '#',  
+          href: 'https://www.instagram.com',  
           src: require('@/assets/images/telegram.svg'),
           type: 'telegram',
         },
