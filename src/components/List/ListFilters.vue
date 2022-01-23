@@ -1,7 +1,7 @@
 <template>
   <section class="list-filters">
     <div class="container">
-      <!-- {{ filters }} -->
+      {{ filters }}
       <div class="list-filters__inner">
         <div class="list-filters__search-wrapper">
           <app-input
@@ -24,8 +24,8 @@
               @choosed='setType'
               v-show='item.show !== false'
               ></app-input>
-              <app-select
 
+              <app-select
               v-for="item in info.filtersSelects"
               :key="item"
               :options='item.options'
@@ -48,17 +48,22 @@ export default {
   methods: {
     setSelectValue(value) {
       console.log(value)
-      let index = this.filtersSelects.options.indexOf(value)
-      if (index !== -1){
-        this.filters.splice(index, 1)
-      } else{
-        this.filters.push(value)
-      } 
+      // let index = this.filtersSelects.options.indexOf(value)
+      // if (index !== -1){
+      //   this.filters.splice(index, 1)
+      // } else{
+      //   this.filters.push(value)
+      // } 
+    },
+    setType(value){
+      this.filters.type = value
     }
   },
   data() {
     return {
-      filters:[],
+      filters:{
+        type: '',
+      },
       info:{
         filtersName: 'list-filters',
         filtersCheckboxes:[
@@ -94,16 +99,28 @@ export default {
             text: 'No Filter',
             options:[
               {
-                label: 'Noo filters',
-                value: 'noofilters',
+                label: 'No filter',
+                value: 'nofilter',
               },
               {
-                label: 'NooNoo Live',
-                value: 'noonoofilters',
+                label: 'Hard Cap',
+                value: 'hardcap',
               },
               {
-                label: 'NooNooNoo Ended',
-                value: 'noonoonoofilters',
+                label: 'Soft Cap',
+                value: 'softcap',
+              },
+              {
+                label: 'LP Percent',
+                value: 'lppercent',
+              },
+              {
+                label: 'Start Time',
+                value: 'starttime',
+              },
+              {
+                label: 'End Time',
+                value: 'endtime',
               },
             ],
           },
