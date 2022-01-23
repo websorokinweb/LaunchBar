@@ -13,6 +13,7 @@
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "moment": "^2.29.1",
+    "near-api-js": "^0.44.2",
     "normalize.css": "^8.0.1",
     "v-pagination-3": "^0.1.7",
     "vue": "^3.2.27",
