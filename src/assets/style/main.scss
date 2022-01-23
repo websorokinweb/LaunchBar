@@ -218,6 +218,38 @@
     color: #DE726B;
     font-weight: 700;
   }
+  .flip-clock__piece{
+    
+  }
+  .flip-clock{
+    .no-animation__card{
+      color: #DE726B;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 700;
+      position: relative;
+    }
+    .flip-clock__piece{
+      margin: 0;
+    }
+  }
+  .flip-clock{
+    .flip-clock__piece + .flip-clock__piece{
+      margin-left: 7px;
+      .no-animation__card:after{
+        content: ':';
+        position: absolute;
+        left: -5.5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #DE726B;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 700;
+      }
+    }
+  }
 }
 
 @keyframes animate-stripes {

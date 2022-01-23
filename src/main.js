@@ -11,6 +11,10 @@ import "normalize.css"
 
 const app = createApp(App)
 
+import Countdown from 'vue3-flip-countdown'
+
+app.use(Countdown)
+
 // Global Components
 
 import AppButton from './components/App/AppButton'

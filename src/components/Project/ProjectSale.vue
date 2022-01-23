@@ -6,7 +6,7 @@
       Presale Starts In:
     </h2>
     <p class="project-sale__timer">
-      <Countdown 
+      <vue3-flip-countdown 
       :deadlineDate="project.presaleStartTime"
       :flipAnimation="false"
       :showLabels="false"
@@ -53,8 +53,6 @@
 <script>
 import axios from 'axios';
 
-import {Countdown} from 'vue3-flip-countdown'
-
 export default {
   inject:[
     'project',
@@ -97,9 +95,6 @@ export default {
           this.tokenBuy = ''
         })
     }
-  },
-  components: {
-    Countdown,
   },
 }
 </script>
