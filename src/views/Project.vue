@@ -35,6 +35,9 @@ import axios from 'axios';
 import { useRoute } from 'vue-router'
 
 export default {
+  title () {
+    return `Project - ${this.item.name}`
+  },
   setup() {
     const route = useRoute()
     let item = {}

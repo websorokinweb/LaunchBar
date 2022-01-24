@@ -27,4 +27,12 @@ app.component('AppInput', AppInput)
 
 // Global Components
 
+// Mixins
+
+import titleMixin from './mixins/titleMixin'
+
+app.mixin(titleMixin)
+
+// Mixins
+
 app.use(store).use(router).mount('#app')

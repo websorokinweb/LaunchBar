@@ -10,6 +10,7 @@ import ListFilters from '@/components/List/ListFilters.vue';
 import ListItems from '@/components/List/ListItems.vue';
 
 export default {
+  title: 'Projects',
   components: {
     ListCover,
     ListFilters,

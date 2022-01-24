@@ -8,6 +8,7 @@ import IndexCover from '@/components/Index/IndexCover.vue';
 import IndexInfo from '@/components/Index/IndexInfo.vue';
 
 export default {
+  title: 'Launchbar',
   components: {
     IndexCover,
     IndexInfo,
