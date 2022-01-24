@@ -1,7 +1,6 @@
 <template>
   <section class="list-filters">
     <div class="container">
-      {{ filters }}
       <div class="list-filters__inner">
         <div class="list-filters__search-wrapper">
           <app-input
@@ -26,13 +25,16 @@
               ></app-input>
 
               <app-select
-              v-for="item in info.filtersSelects"
-              :key="item"
-              :options='item.options'
-              @selectedBlockchain='setSelectValue'
-              :placeholderValue="item.text"
-              >
-              </app-select>
+              :options='info.filtersSelects[0].options'
+              @selectedBlockchain='setFilterStatus'
+              :placeholderValue="info.filtersSelects[0].text"
+              ></app-select>
+
+              <app-select
+              :options='info.filtersSelects[1].options'
+              @selectedBlockchain='setFilterSort'
+              :placeholderValue="info.filtersSelects[1].text"
+              ></app-select>
             </div>
         </div>
       </div>
@@ -46,23 +48,30 @@ import AppSelect from '@/components/App/AppSelect.vue';
 
 export default {
   methods: {
-    setSelectValue(value) {
-      console.log(value)
-      // let index = this.filtersSelects.options.indexOf(value)
-      // if (index !== -1){
-      //   this.filters.splice(index, 1)
-      // } else{
-      //   this.filters.push(value)
-      // } 
+    setFilterStatus(value) {
+      this.filters.status = value
+    },
+    setFilterSort(value) {
+      this.filters.sort = value
     },
     setType(value){
       this.filters.type = value
+    }
+  },
+  watch: {
+    filters: {
+      deep: true,
+      handler(value){
+        console.log(value)
+      }
     }
   },
   data() {
     return {
       filters:{
         type: '',
+        status: '',
+        sort: '',
       },
       info:{
         filtersName: 'list-filters',

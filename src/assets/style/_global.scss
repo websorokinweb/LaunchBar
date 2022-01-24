@@ -329,11 +329,12 @@ menu{
     font-weight: 400;
   }
   &:focus{
-    background: rgba(#EA4C89, 0.15);
-    border-color: #EA4C89;
+    background: rgba(#2d1775, 0.15);
+    border-color: #552cdb;
     outline: none;
+    color: #fff;
     &::placeholder{
-      color: var(--black);
+      color: #fff;
     }
   }
   &--grey{
