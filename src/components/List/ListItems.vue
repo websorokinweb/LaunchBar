@@ -69,12 +69,26 @@
             
             <span class="project-card__footer">
               <span class="project-card__sale">
-                <span class="project-card__sale-label">
+                <span class="project-card__sale-label"
+                v-if="item.status === 'live'"
+                >
+                  Sale Ends In:
+                </span>
+                <span class="project-card__sale-label"
+                v-else
+                >
                   Presale:
                 </span>
-                <span class="project-card__sale-time">
+                <span class="project-card__sale-time"
+                v-if="item.status === 'ended'"
+                >
+                  Ended
+                </span>
+                <span class="project-card__sale-time"
+                v-else
+                >
                   <vue3-flip-countdown 
-                  :deadlineDate="item.presaleStartTime"
+                  :deadlineDate="item.status === 'upcoming' ? item.presaleStartTime : item.saleStartTime"
                   :flipAnimation="false"
                   :showLabels="false"
                   />
@@ -115,6 +129,7 @@ export default {
         item.hardCapMask = this.maskText(item.hardCap)
         
         item.presaleStartTime = new Date(item.presaleStartTime)
+        item.saleStartTime = new Date(item.saleStartTime)
 
         return item
       })
@@ -125,6 +140,7 @@ export default {
   ],
   data() {
     return {
+      today: new Date(),
       info:{
         items:[
           {
@@ -151,7 +167,8 @@ export default {
             unsoldTokens: 'Refund',
 
             // presaleStartTime: '2022.01.12 18:00 (UTC)',
-            presaleStartTime: '2022-01-26T22:53:30',
+            presaleStartTime: '2022-01-27T22:53:30',
+            saleStartTime: '2022-01-28T22:53:30',
             presaleEndTime: '2022.01.12 18:00 (UTC)',
 
             listingOn: 'Pancakeswap',
@@ -170,7 +187,8 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
+            presaleStartTime: '2022-01-24T22:53:30',
+            saleStartTime: '2022-01-28T22:53:30',
           },
           {
             name: 'NameProject',
@@ -185,6 +203,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
+            saleStartTime: '2022-02-26T22:53:30',
           },
           {
             name: 'NameProject',
@@ -199,6 +218,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
+            saleStartTime: '2022-02-26T22:53:30',
           },
           {
             name: 'NameProject',
@@ -213,6 +233,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
+            saleStartTime: '2022-02-26T22:53:30',
           },
           {
             name: 'NameProject',
@@ -227,6 +248,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
+            saleStartTime: '2022-02-26T22:53:30',
           },
         ],
       },
