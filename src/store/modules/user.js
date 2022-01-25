@@ -1,4 +1,5 @@
 import * as nearAPI from "near-api-js";
+
 // const { connect, keyStores } = nearAPI;
 const { connect, keyStores, WalletConnection } = nearAPI;
 
@@ -32,6 +33,17 @@ async function nearSetup(){
 
   localStorage.setItem('walletId', state.wallet.id)
 
+  console.log(localStorage.getItem('undefined_wallet_auth_key'))
+
+  if(localStorage.getItem('undefined_wallet_auth_key')){
+    state.walletConnected = localStorage.getItem('undefined_wallet_auth_key').accountId !== ''
+    console.log('WalletConnected - ' + state.walletConnected)
+  }
+
+  // if(localStorage.getItem('undefined_wallet_auth_key') !== null){
+  //   state.walletConnected = true
+  // }
+
   // state.walletConnected = state.wallet.id !== ''
 }
 
@@ -47,7 +59,13 @@ nearSetup()
 async function connectNear(){
   await state.nearWallet.requestSignIn(
     "example-contract.testnet", // contract requesting access
-    );
+    ).then(
+      state.walletConnected = localStorage.getItem('undefined_wallet_auth_key').accountId !== ''
+    )
+
+    // if(localStorage.getItem('undefined_wallet_auth_key')){
+    //   state.walletConnected = localStorage.getItem('undefined_wallet_auth_key').accountId !== ''
+    // }
 }
 
 async function leaveNear(){
@@ -75,14 +93,16 @@ const state = {
   },
   nearWallet: null,
   nearWalletId: null,
-  walletConnected: window.localStorage.getItem('undefined_wallet_auth_key').accountId !== '',
+  walletConnected: false,
+
+  useFalse: false,
 };
 
 const getters = {
   userLogged: state => state.username !== '',
   user: state => state.user,
   wallet: state => state.wallet,
-  walletConnected: state => state.walletConnected,
+  walletConnected: state => state.useFalse ? null : localStorage.getItem('undefined_wallet_auth_key'),
   // walletConnected: state => state.wallet,
   nearWallet: state => state.nearWallet,
   nearWalletId: state => state.nearWalletId,
@@ -94,7 +114,10 @@ const mutations = {
   },
 
   connectWallet(){
-    connectNear()
+    connectNear().then(
+      // state.walletConnected = localStorage.getItem('undefined_wallet_auth_key')
+      console.log(localStorage.getItem('undefined_wallet_auth_key'))
+    )
   },
   quitWallet(){
 

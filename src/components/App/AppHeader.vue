@@ -219,7 +219,7 @@ export default {
       return this.openedWallets !== false ? "header__wallets--active" : ""
     },
     walletIsConnected(){
-      return this.walletConnected !== false ? "header__wallets--connected" : ""
+      return this.walletConnected !== false ? "" : "header__wallets--connected"
     },
     walletMin(){
       return localStorage.getItem('walletId').substr(0, 5) + '...' + localStorage.getItem('walletId').substr(-4, localStorage.getItem('walletId').length)
