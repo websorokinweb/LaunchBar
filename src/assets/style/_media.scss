@@ -13,6 +13,12 @@
     font-size: 36px;
     line-height: 44px;
   }
+  .index-info__title{
+    margin-bottom: 24px;
+  }
+  .index-info__item .btn{
+    margin-top: 32px;
+  }
 }
 
 @media (max-width: 850px){
@@ -58,11 +64,56 @@
       max-width: unset;
     }
   }
+  .index-info{
+    padding-bottom: 50px;
+  }
+  .index-info__items{
+    flex-direction: column;
+  }
+  .index-info__items{
+    margin-bottom: 20px;
+  }
+  .index-info__items .index-info__item + .index-info__item{
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .index-info__title{
+    font-size: 21px;
+    line-height: 24px;
+    margin-bottom: 18px;
+  }
+  .index-info__item .btn{
+    margin-top: 22px;
+  }
+  .index-info__instruction .btn{
+    margin-right: 0;
+  }
+  .index-info__item,
+  .index-info__instruction{
+    padding: 25px;
+  }
+  body{
+    font-size: 19px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 700px){
+  .index-info__instruction{
+    flex-direction: column;
+    text-align: center;
+  }
+  .index-info__instruction .btn{
+    margin-top: 22px;
+  }
 }
 
 @media (max-width: 425px){
   .index-cover__buttons .btn + .btn{
     margin-left: 20px;
+  }
+  .index-info{
+    padding-bottom: 40px;
   }
 }
 
@@ -77,6 +128,14 @@
   }
   .index-cover__buttons .btn + .btn{
     margin-left: 15px;
+  }
+  .index-info__title{
+    // font-size: 19px;
+    // line-height: 24px;
+  }
+  body {
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 
