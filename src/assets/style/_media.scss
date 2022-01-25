@@ -1,17 +1,48 @@
 @media (max-width: 1150px){
+  // Index
+
   .index-cover{
     padding-top: 40px;
   }
+
+  // Index
+}
+
+@media (max-width: 1024px){
+  // Project
+
+  .project__group section:nth-child(2) {
+    max-width: 250px;
+  }
+
+  .project__group + .project__group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    section:first-child{
+      max-width: unset;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+    section:nth-child(2){
+      max-width: 500px;
+    }
+  }
+
+  // Project
 }
 
 @media (max-width: 950px){
-  .index-cover__descr{
-    font-size: 21px;
-    line-height: 24px;
-  }
   .title{
     font-size: 36px;
     line-height: 44px;
+  }
+  
+  // Index
+
+  .index-cover__descr{
+    font-size: 21px;
+    line-height: 24px;
   }
   .index-info__title{
     margin-bottom: 24px;
@@ -19,15 +50,68 @@
   .index-info__item .btn{
     margin-top: 32px;
   }
+
+  // Index
+
+  // Project
+
+  .project__group + .project__group{
+    margin-top: 20px;
+  }
+  .project__group section:first-child{
+    margin-right: 20px;
+  }
+  .project__group + .project__group section:first-child{
+    margin-bottom: 20px;
+  }
+  .project-sale{
+    justify-content: space-between;
+  }
+  .project-info__characters-item:before{
+    left: -31%;
+  }
+
+  // Project
 }
 
 @media (max-width: 850px){
+  // Index
+
   .index-cover{
     padding-bottom: 52px;
   }
+
+  // Index
+
+  // Project
+  
+  .project__group{
+    flex-direction: column;
+    align-items: center;
+  }
+  .project__group section:first-child{
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: unset;
+  }
+  .project-info__characters-item:before{
+    left: -50%;
+  }
+  .project__group section:nth-child(2) {
+    max-width: 500px;
+  }
+
+  // Project
 }
 
 @media (max-width: 768px){
+  body{
+    font-size: 19px;
+    line-height: 22px;
+  }
+
+  // Index
+
   .index-cover__imgwrapper img{
     animation-duration: 1.5s;
   }
@@ -92,13 +176,13 @@
   .index-info__instruction{
     padding: 25px;
   }
-  body{
-    font-size: 19px;
-    line-height: 22px;
-  }
+
+  // Index
 }
 
 @media (max-width: 700px){
+  // Index
+
   .index-info__instruction{
     flex-direction: column;
     text-align: center;
@@ -106,22 +190,101 @@
   .index-info__instruction .btn{
     margin-top: 22px;
   }
+
+  // Index
+
+  // Project
+
+  .project-info__characters-item:before{
+    left: -31%;
+  }
+
+  // Project
+}
+
+@media (max-width: 650px){
+  // Project
+
+  .project-info__characters{
+    flex-wrap: wrap;
+  }
+  .project-info__characters-item + .project-info__characters-item{
+    margin-top: 12px;
+  }
+  .project-info__characters-item{
+    width: 50%;
+    text-align: center;
+    &:nth-child(odd){
+      &:before{
+        display: none;
+      }
+    }
+    &:nth-child(2){
+      margin-top: 0;
+      // display: none;
+    }
+  }
+  .project-info__characters-item:before{
+    left: 0%;
+  }
+  .project-info .project-status{
+    top: 45px;
+    right: 20px;
+  }
+
+  .project-info__top{
+    position: relative;
+    flex-direction: column;
+  }
+  .project-info__logo-wrapper{
+    margin-bottom: 15px;
+  }
+  .project-info__top-inner{
+    position: static;
+  }
+
+  // Project
+}
+
+@media (max-width: 550px){
+  // Project
+
+  .project-info__characters{
+    padding: 20px;
+  }
+  
+  .project-info__logo-wrapper{
+    margin-right: 20px;
+  }
+
+  // Project
 }
 
 @media (max-width: 425px){
+  // Index
+
   .index-cover__buttons .btn + .btn{
     margin-left: 20px;
   }
   .index-info{
     padding-bottom: 40px;
   }
+  
+  // Index
 }
 
 @media (max-width: 380px){
+  body {
+    font-size: 16px;
+    line-height: 19px;
+  }
   .title {
     font-size: 28px;
     line-height: 38px;
   }
+
+  // Index
+  
   .index-cover__descr{
     font-size: 18px;
     line-height: 21px;
@@ -129,14 +292,8 @@
   .index-cover__buttons .btn + .btn{
     margin-left: 15px;
   }
-  .index-info__title{
-    // font-size: 19px;
-    // line-height: 24px;
-  }
-  body {
-    font-size: 16px;
-    line-height: 19px;
-  }
+
+  // Index
 }
 
 // @media (max-width: 1380px){
