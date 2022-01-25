@@ -3,7 +3,7 @@ const state = {
     {
       label: 'BSC',
       value: 'bsc',
-      image: require('@/assets/images/blockchain-bsc.png'),
+      image: require('@/assets/images/blockchain-bsc.svg'),
     },
     // {
     //   label: 'Polygon',

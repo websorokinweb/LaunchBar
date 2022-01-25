@@ -18,6 +18,7 @@
           :innerLink="index === 0"
           :link="index !== 0"
           :href="item.href"
+          :view="index === 0 ? 'yellow' : ''"
           ></app-button>
         </li>
       </ul>
@@ -28,7 +29,9 @@
         <app-button
         :title="info.instruction.btnTitle"
         big
+        innerLink
         view="dark-blue"
+        :href="info.instruction.href"
         ></app-button>
       </div>
     </div>
@@ -57,6 +60,7 @@ export default {
         instruction:{
           descr: 'The interface is as simple and intuitive as possible. To launch a project, it is enough to submit a request by clicking on the Create button.',
           btnTitle: 'Documents',
+          href: '/gfgffg',
         },
       },
     }

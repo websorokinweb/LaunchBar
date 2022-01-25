@@ -91,6 +91,10 @@ export default {
             text: 'All Status',
             options:[
               {
+                value: 'all',
+                label: 'All sales',
+              },
+              {
                 label: 'Upcoming',
                 value: 'upcoming',
               },

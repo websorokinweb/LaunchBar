@@ -5,7 +5,7 @@
   >
     <app-button
     title='Leave wallet'
-    @click='[togglePopUpWallets(), quitWallet()]'
+    @click='[togglePopUpProfile(), quitWallet()]'
     view="out"
     ></app-button>
     <p class="profile__title">
