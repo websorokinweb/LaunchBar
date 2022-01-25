@@ -1000,6 +1000,20 @@
   }
 }
 
+@keyframes appear {
+  0%{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes appear-center {
+  0%{
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
 .profile{
   position: absolute;
   top: 50px;
@@ -1012,7 +1026,8 @@
   // color: $secondary;
   cursor: default;
   z-index: 3;
-  opacity: 0;
+  display: none;
+  // opacity: 0;
   transition: all .4s;
   pointer-events: none;
   min-width: 350px;
@@ -1030,7 +1045,8 @@
     pointer-events: none;
   }
   &--active{
-    opacity: 1;
+    animation: appear 250ms ease-in 1;
+    display: unset;
     pointer-events: all;
   }
   &--active + .profile__pad{
@@ -1920,7 +1936,8 @@
   color: var(--black);
   cursor: default;
   z-index: 3;
-  opacity: 0;
+  // opacity: 0;
+  display: none;
   transition: all .4s;
   pointer-events: none;
 
@@ -1938,7 +1955,9 @@
     pointer-events: none;
   }
   &--active{
-    opacity: 1;
+    // opacity: 1;
+    animation: appear-center 250ms ease-in 1;
+    display: unset;
     pointer-events: all;
   }
   &--active + .blockchains__pad{
@@ -2031,7 +2050,8 @@
   color: var(--black);
   cursor: default;
   z-index: 2;
-  opacity: 0;
+  // opacity: 0;
+  display: none;
   transition: all .4s;
   pointer-events: none;
 
@@ -2048,7 +2068,9 @@
     pointer-events: none;
   }
   &--active{
-    opacity: 1;
+    // opacity: 1;
+    animation: appear 250ms ease-in 1;
+    display: unset;
     pointer-events: all;
   }
   &--active + .wallets__pad{
