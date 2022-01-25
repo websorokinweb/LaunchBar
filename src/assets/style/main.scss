@@ -1036,9 +1036,10 @@
     pointer-events: all;
   }
   &__title{
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 19px;
     font-weight: 700;
+    color: #fff;
   }
   .label-text{
     font-size: 12px;
@@ -1051,11 +1052,11 @@
     line-height: 16px;
     padding-left: 22px;
     padding-right: 22px;
-    background: linear-gradient(90deg, #DF4AFE 0%, #943EFE 100%);
+    background: linear-gradient(180deg, #6232FB 0%, #7420C7 100%);
     cursor: pointer;
     height: 30px;
     &:hover{
-      background: linear-gradient(94.42deg, rgba(245, 79, 254, 0.7) 2.5%, rgba(121, 58, 255, 0.7) 99.28%);
+      background: linear-gradient(180deg, rgba(#6232FB, .8) 0%, rgba(#7420C7, .8) 100%);
     }
   }
   &__form{
@@ -1072,6 +1073,9 @@
     margin-bottom: 6px;
     font-size: 14px;
     line-height: 16px;
+  }
+  &__sizes{
+    color: #fff;
   }
   &__imgwrapper-uploaded{
     position: absolute;
@@ -1117,7 +1121,7 @@
     }
   }
   &__imgwrapper{
-    max-height: 16px;
+    max-height: 19px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -1126,7 +1130,7 @@
     position: relative;
     z-index: 2;
     img{
-      max-width: 19px;
+      max-width: 18px;
     }
     &--active{
       position: absolute;

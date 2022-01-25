@@ -42,7 +42,7 @@
       </app-upload>
       <app-input
       descr="Your username:"
-      placeholderText="FlokiCyberPunk"
+      placeholderText="Launchbar"
       v-model="form.username"
       ></app-input>
     </span>

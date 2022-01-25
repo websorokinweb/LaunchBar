@@ -31,6 +31,14 @@
             <img src="@/assets/images/arrow.svg" alt="">
           </div>
         </button>
+        <!-- {{ 'walletConnected - ' + walletConnected }} -->
+        <!-- {{ wallet }} -->
+        {{ wallet.id }}
+        <br>
+        {{ walletConnected }}
+        <br>
+        {{ 'wallet id - '}}
+        {{ wallet.id !== '' }}
         <button class="header__wallets btn btn--blue"
         :class='[walletIsOpen, walletIsConnected]'
         @click='[togglePopUpWallets(), copyWalletId()]'
