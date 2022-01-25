@@ -9,5 +9,5 @@ chainWebpack: (config) => {
 }
 
 module.exports = {
-  publicPath: '/Launchbar/'
+  publicPath: '/LaunchBar/'
 }
