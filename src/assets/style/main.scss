@@ -693,6 +693,7 @@
       line-height: 14px;
       .wallets{
         min-width: 100%;
+        padding-top: 15px;
         .btn{
           width: 100%;
           min-width: 150px;
@@ -1121,7 +1122,7 @@
     }
   }
   &__imgwrapper{
-    max-height: 19px;
+    max-height: 25px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -1130,7 +1131,7 @@
     position: relative;
     z-index: 2;
     img{
-      max-width: 18px;
+      max-width: 16px;
     }
     &--active{
       position: absolute;
@@ -1147,6 +1148,14 @@
     font-size: 12px;
     line-height: 14px;
     color: #BEBEBE;
+  }
+  &--connected{
+    padding-top: 52px;
+    .btn--out{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
   }
 }
 
@@ -2159,6 +2168,9 @@
     //     border-radius: inherit;
     //   }
     // }
+  }
+  .btn--green{
+    background: #479646;
   }
 }
 

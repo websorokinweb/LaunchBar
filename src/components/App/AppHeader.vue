@@ -33,12 +33,12 @@
         </button>
         <!-- {{ 'walletConnected - ' + walletConnected }} -->
         <!-- {{ wallet }} -->
-        {{ wallet.id }}
-        <br>
-        {{ walletConnected }}
-        <br>
-        {{ 'wallet id - '}}
-        {{ wallet.id !== '' }}
+        <!-- {{ wallet.id }} -->
+        <!-- <br> -->
+        <!-- {{ walletConnected }} -->
+        <!-- <br> -->
+        <!-- {{ 'wallet id - '}}
+        {{ wallet.id !== '' }} -->
         <button class="header__wallets btn btn--blue"
         :class='[walletIsOpen, walletIsConnected]'
         @click='[togglePopUpWallets(), copyWalletId()]'
@@ -113,7 +113,7 @@
       @click.stop='togglePopUpWallets'
       >
         <span>
-          {{ walletConnected ? walletMin : 'Connect' }}
+          {{ walletConnected ? 'test' : 'Connect' }}
         </span>
         <span class="header__wallets-imgwrapper"
         v-if="walletConnected"
@@ -213,6 +213,7 @@ export default {
       'walletConnected',
       'wallet',
       'user',
+      'nearWalletId',
     ]),
     walletIsOpen(){
       return this.openedWallets !== false ? "header__wallets--active" : ""
@@ -221,7 +222,8 @@ export default {
       return this.walletConnected !== false ? "header__wallets--connected" : ""
     },
     walletMin(){
-      return this.wallet.id.substr(0, 5) + '...' + this.wallet.id.substr(-4, this.wallet.id.length)
+      return localStorage.getItem('walletId').substr(0, 5) + '...' + localStorage.getItem('walletId').substr(-4, localStorage.getItem('walletId').length)
+      // return localStorage.getItem('walletId')
     },
     menuIsOpen(){
       if(this.menuOpened || this.openedWallets){

@@ -1,8 +1,13 @@
 <template>
   <div class="profile"
-  :class='profileState'
+  :class='[profileState, profileConnected]'
   @click.stop
   >
+    <app-button
+    title='Leave wallet'
+    @click='[togglePopUpWallets(), quitWallet()]'
+    view="out"
+    ></app-button>
     <p class="profile__title">
       Your Profile Settings
     </p>
@@ -81,9 +86,13 @@ export default {
     ...mapGetters([
       'currentWallet',
       'user',
+      'walletConnected',
     ]),
     profileState() {
       return this.opened ? 'profile--active' : ''
+    },
+    profileConnected() {
+      return this.walletConnected ? 'profile--connected' : ''
     },
   },
   methods: {
@@ -98,6 +107,8 @@ export default {
       'saveUserSettings',
       'togglePopUpProfile',
       'clearUserLogo',
+      'togglePopUpWallets',
+      'quitWallet'
     ])
   },
   components: {

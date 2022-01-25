@@ -1,6 +1,6 @@
 <template>
   <div class="wallets"
-  :class='walletsState'
+  :class='[walletsState]'
   @click.stop
   v-if="!walletConnected"
   >
@@ -31,15 +31,10 @@
         <a class="wallets__link" :href="currentFaqLink" target="_blank">
           ?
         </a>
-          <app-button
-          title='Confirm'
-          @click='[togglePopUpWallets(), connectWallet()]'
-          ></app-button>
-        <!-- <vue-metamask
-        userMessage="msg" 
-        @onComplete="onComplete"
-        >
-        </vue-metamask> -->
+        <app-button
+        title='Confirm'
+        @click='[togglePopUpWallets(), connectWallet()]'
+        ></app-button>
       </div>
     </div>
   </div>
@@ -49,9 +44,9 @@
   v-else
   >
     <app-button
-    title='Leave wallet'
-    @click='[togglePopUpWallets(), quitWallet()]'
-    view="red"
+    title='Copied'
+    @click='[togglePopUpWallets(), copyWallet()]'
+    view="green"
     ></app-button>
   </div>
   <div class="wallets__pad"></div>
@@ -121,6 +116,14 @@ export default {
       })
 
       this.data.currWallet = needValue
+    },
+    copyWallet(){
+      const el = document.createElement('textarea');
+      el.value = this.wallet.id;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
     },
     setWallet(){
       this.setNewWallet(this.data.currWallet)

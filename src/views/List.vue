@@ -1,8 +1,8 @@
 <template>
-  {{ nearWallet }}
-  <br>
-  <br>
-  {{ nearWalletId }}
+  <!-- {{ nearWallet }} -->
+  <!-- <br> -->
+  <!-- <br> -->
+  <!-- {{ nearWalletId }} -->
   <list-cover></list-cover>
   <list-filters></list-filters>
   <list-items></list-items>

@@ -1,17 +1,3 @@
-const state = {
-  user:{
-    logo: {
-      src: '',
-    },
-    username: '',
-  },
-  wallet:{
-   id: '', 
-  },
-  nearWallet: null,
-  nearWalletId: null,
-};
-
 import * as nearAPI from "near-api-js";
 // const { connect, keyStores } = nearAPI;
 const { connect, keyStores, WalletConnection } = nearAPI;
@@ -35,11 +21,16 @@ async function nearSetup(){
   const near = await connect({ ...config, keyStore });
   state.nearWallet = new WalletConnection(near);
 
-  state.wallet.id = state.nearWallet.getAccountId()
+  // let walletId = state.nearWallet.getAccountId()
+  // mutations.changeWallet(walletId)
 
   state.nearWalletId = state.nearWallet.getAccountId()
 
+  state.wallet.id = state.nearWallet.getAccountId()
+
   console.log(state.wallet.id)
+
+  localStorage.setItem('walletId', state.wallet.id)
 
   // state.walletConnected = state.wallet.id !== ''
 }
@@ -54,30 +45,45 @@ nearSetup()
 // checkIfNearConnected()
 
 async function connectNear(){
-
   await state.nearWallet.requestSignIn(
     "example-contract.testnet", // contract requesting access
     );
-
-  // state.nearWalletId = state.nearWallet.getAccountId()
-
-  console.log(state.nearWallet, state.nearWalletId)
 }
 
-function leaveNear(){
-  state.nearWallet.signOut()
-  console.log(state.nearWallet)
+async function leaveNear(){
+  await state.nearWallet.signOut()
+
+  let result = state.nearWallet.isSignedIn()
+  let id = state.nearWallet.getAccountId()
+  console.log(result, id)
 
   localStorage.setItem('undefined_wallet_auth_key', null)
   state.nearWallet = null
   state.nearWalletId = null
 }
 
+
+const state = {
+  user:{
+    logo: {
+      src: '',
+    },
+    username: '',
+  },
+  wallet:{
+   id: '', 
+  },
+  nearWallet: null,
+  nearWalletId: null,
+  walletConnected: window.localStorage.getItem('undefined_wallet_auth_key').accountId !== '',
+};
+
 const getters = {
   userLogged: state => state.username !== '',
   user: state => state.user,
   wallet: state => state.wallet,
-  walletConnected: state => state.nearWalletId === null,
+  walletConnected: state => state.walletConnected,
+  // walletConnected: state => state.wallet,
   nearWallet: state => state.nearWallet,
   nearWalletId: state => state.nearWalletId,
 };
@@ -87,24 +93,44 @@ const mutations = {
     state.user = JSON.parse(JSON.stringify(payload))
   },
 
-  // connectWallet(state){
   connectWallet(){
     connectNear()
-    // state.wallet.id = 'anvc6-vxkdpwn2ks2rm4l-gae'
   },
-  // quitWallet(state){
   quitWallet(){
-    // state.wallet = {id: ''}
 
     leaveNear()
   },
+  // connectWallet(state){
+
+  clearWalletData(){
+    localStorage.setItem('undefined_wallet_auth_key', null)
+    state.nearWallet = null
+    state.nearWalletId = null
+  },
+  
+  // changeWallet(state, payload){
+  //   state.wallet.id = payload
+  // },
   clearUserLogo(state){
     state.user.logo = {src: ''}
   }
 };
 
+const actions = {
+  async connectWallet({state}){
+    await state.nearWallet.requestSignIn(
+      "example-contract.testnet", // contract requesting access
+      );
+  },
+  quitWallet({state, commit}){
+    state.nearWallet.signOut()
+    commit('clearWalletData')
+  },
+}
+
 export default {
   state,
   getters,
   mutations,
+  actions,
 };
