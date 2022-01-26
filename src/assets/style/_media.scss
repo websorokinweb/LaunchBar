@@ -219,6 +219,14 @@
   }
 
   // Index
+
+  // Project
+
+  .project-body{
+    padding-bottom: 50px;
+  }
+
+  // Project
 }
 
 @media (max-width: 700px){
@@ -327,6 +335,14 @@
   }
   
   // Index
+
+  // Project
+
+  .project-body{
+    padding-bottom: 40px;
+  }
+
+  // Project
 }
 
 @media (max-width: 380px){
@@ -350,6 +366,16 @@
   }
 
   // Index
+
+  // Project
+  .project-whitelist__title{
+    margin-bottom: 30px;
+  }
+  .project-whitelist__item{
+    padding-right: 16px;
+  }
+
+  // Project
 }
 
 // @media (max-width: 1380px){
