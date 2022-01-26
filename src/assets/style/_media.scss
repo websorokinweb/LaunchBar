@@ -32,6 +32,18 @@
   // Project
 }
 
+@media (max-width: 1000px){
+  // Project
+
+  .project-sale__timer{
+    .flip-clock__piece{
+      margin: 0 5px !important;
+    }
+  }
+
+  // Project
+}
+
 @media (max-width: 950px){
   .title{
     font-size: 36px;
