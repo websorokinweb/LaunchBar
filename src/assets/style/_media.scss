@@ -298,6 +298,28 @@
   // Project
 }
 
+@media (max-width: 600px){
+  // Project
+
+  .project-details {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .project-details__value-descr{
+    white-space: nowrap;
+  }
+  .project-details__label{
+    white-space: nowrap;
+    margin-right: 30px;
+  }
+  .project-details__value{
+    word-break: break-word;
+    text-align: right;
+  }
+
+  // Project
+}
+
 @media (max-width: 550px){
   // Project
 
@@ -343,6 +365,16 @@
 
   .project-body{
     padding-bottom: 40px;
+  }
+  .project-details__label{
+    margin-right: 0;
+    word-break: break-word;
+    width: 100px;
+    white-space: unset;
+  }
+  .project-details__item{
+    padding: 16px 18px 15px;
+    border-radius: 20px;
   }
 
   // Project
