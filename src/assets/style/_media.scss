@@ -37,6 +37,10 @@
     font-size: 36px;
     line-height: 44px;
   }
+
+  .footer__inner{
+    padding: 0 25px;
+  }
   
   // Index
 
@@ -109,6 +113,28 @@
     font-size: 19px;
     line-height: 22px;
   }
+
+  .footer__inner{
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 70px 0 20px 0;
+    height: unset;
+  }
+
+  .footer .logo{
+    transform: translateX(-50%);
+    top: 17px;
+  }
+
+  // .footer__copyright{
+  //   display: inline-block;
+  // }
+
+  // .footer__copyright,
+  // .footer .social__list{
+  //   width: 50%;
+  // }
 
   // Index
 
@@ -258,6 +284,17 @@
   }
 
   // Project
+}
+
+@media (max-width: 500px){
+  .footer__inner{
+    flex-direction: column;
+    justify-content: unset;
+    padding-top: 80px;
+  }
+  .footer__copyright{
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 425px){
