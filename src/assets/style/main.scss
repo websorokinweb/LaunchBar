@@ -346,6 +346,9 @@
   &__imgwrapper{
     img{
       border-radius: 30px;
+      min-height: 150px;
+      // max-height: 180px;
+      max-height: 180px;
     }
   }
 }

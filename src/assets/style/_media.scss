@@ -59,6 +59,9 @@
 
   // Project
 
+  .project-cover{
+    padding-bottom: 25px;
+  }
   .project__group + .project__group{
     margin-top: 20px;
   }
@@ -281,6 +284,10 @@
   
   .project-info__logo-wrapper{
     margin-right: 20px;
+  }
+
+  .project-cover{
+    padding-bottom: 20px;
   }
 
   // Project
