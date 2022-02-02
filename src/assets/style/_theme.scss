@@ -34,6 +34,50 @@
     background: #6030F9;
   }
 
+  .list-cover{
+    margin-top: 17px;
+    &__title{
+      color: #fff;
+    }
+  }
+
+  .project-card{
+    box-shadow: unset;
+  }
+  .project-card__name{
+    font-weight: 700;
+  }
+  .project-card__rate,
+  .project-card__sale-label,
+  .progress-value{
+    color: #8A99CF;
+  }
+
+  .progress-line{
+    background: #C0C0DF;
+    &--done{
+      // linear-gradient(90deg, #B492EF 0%, #5C59E9 100%);
+      background-image: repeating-linear-gradient(
+        90deg,
+        #B492EF 20%,
+        #B492EF 50%,
+        #5C59E9 50%,
+        #5C59E9 70%
+      );
+      // background: linear-gradient(90deg, #B492EF 0%, #5C59E9 100%);
+      animation-name: line-stripe-theme;
+    }
+  }
+
+  @keyframes line-stripe-theme {
+    0% {
+      background-position: 0 0;
+    }
+  
+    100% {
+      background-position: 60px 0;
+    }
+  }
   // .cover__inner{
   //   min-height: 300px;
   // }

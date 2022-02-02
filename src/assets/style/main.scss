@@ -114,6 +114,11 @@
   background: url('./assets/images/list-cover.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  &--theme{
+    background: url('./assets/images/list-cover--theme.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
   &__inner{
     height: 180px;
     display: flex;
@@ -190,6 +195,10 @@
     line-height: 23px;
     font-weight: 700;
     color: var(--yellow);
+    &--hard-cap{
+      font-weight: 400;
+      display: inline-block;
+    }
   }
   &__cap-divider{
     font-weight: 400;

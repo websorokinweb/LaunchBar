@@ -52,7 +52,7 @@ export default {
       id: 24,
       name: 'BabyMafia',
       status: 'live',
-      image: require('@/assets/images/temp/list-item-1.png'),
+      image: require('@/assets/images/temp/list-item-1.jpg'),
       blockchainSymbol: 'BNB',
       tokenSymbol: '$BMF',
       collected: 0,

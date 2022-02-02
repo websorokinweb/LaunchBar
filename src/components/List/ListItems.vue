@@ -43,7 +43,9 @@
                 <span class="project-card__cap-divider">
                   -
                 </span>
-                {{ item.hardCapMask + ' ' + item.blockchainSymbol }}
+                <div class="project-card__cap-value--hard-cap">
+                  {{ item.hardCapMask + ' ' + item.blockchainSymbol }}
+                </div>
               </span>
             </span>
             <span class="project-card__rate">
@@ -146,7 +148,7 @@ export default {
           {
             name: 'BabyMafia',
             status: 'upcoming',
-            image: require('@/assets/images/temp/list-item-1.png'),
+            image: require('@/assets/images/temp/list-item-1.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
@@ -178,7 +180,7 @@ export default {
           {
             name: 'NameProject',
             status: 'live',
-            image: require('@/assets/images/temp/list-item-2.png'),
+            image: require('@/assets/images/temp/list-item-2.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 250,
@@ -193,7 +195,7 @@ export default {
           {
             name: 'NameProject',
             status: 'ended',
-            image: require('@/assets/images/temp/list-item-3.png'),
+            image: require('@/assets/images/temp/list-item-3.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 100,
@@ -208,7 +210,7 @@ export default {
           {
             name: 'NameProject',
             status: 'upcoming',
-            image: require('@/assets/images/temp/list-item-1.png'),
+            image: require('@/assets/images/temp/list-item-1.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
@@ -223,7 +225,7 @@ export default {
           {
             name: 'NameProject',
             status: 'live',
-            image: require('@/assets/images/temp/list-item-2.png'),
+            image: require('@/assets/images/temp/list-item-2.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 250,
@@ -238,7 +240,7 @@ export default {
           {
             name: 'NameProject',
             status: 'ended',
-            image: require('@/assets/images/temp/list-item-3.png'),
+            image: require('@/assets/images/temp/list-item-3.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 100,
@@ -253,7 +255,7 @@ export default {
           {
             name: 'NameProject',
             status: 'upcoming',
-            image: require('@/assets/images/temp/list-item-1.png'),
+            image: require('@/assets/images/temp/list-item-1.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
@@ -268,7 +270,7 @@ export default {
           {
             name: 'NameProject',
             status: 'live',
-            image: require('@/assets/images/temp/list-item-2.png'),
+            image: require('@/assets/images/temp/list-item-2.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 250,
@@ -283,7 +285,7 @@ export default {
           {
             name: 'NameProject',
             status: 'ended',
-            image: require('@/assets/images/temp/list-item-3.png'),
+            image: require('@/assets/images/temp/list-item-3.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 100,
@@ -298,7 +300,7 @@ export default {
           {
             name: 'NameProject',
             status: 'upcoming',
-            image: require('@/assets/images/temp/list-item-1.png'),
+            image: require('@/assets/images/temp/list-item-1.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
@@ -313,7 +315,7 @@ export default {
           {
             name: 'NameProject',
             status: 'live',
-            image: require('@/assets/images/temp/list-item-2.png'),
+            image: require('@/assets/images/temp/list-item-2.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 250,
@@ -328,7 +330,7 @@ export default {
           {
             name: 'NameProject',
             status: 'ended',
-            image: require('@/assets/images/temp/list-item-3.png'),
+            image: require('@/assets/images/temp/list-item-3.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 100,
@@ -343,7 +345,7 @@ export default {
           {
             name: 'NameProject',
             status: 'upcoming',
-            image: require('@/assets/images/temp/list-item-1.png'),
+            image: require('@/assets/images/temp/list-item-1.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
@@ -358,7 +360,7 @@ export default {
           {
             name: 'NameProject',
             status: 'live',
-            image: require('@/assets/images/temp/list-item-2.png'),
+            image: require('@/assets/images/temp/list-item-2.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 250,
@@ -373,7 +375,7 @@ export default {
           {
             name: 'NameProject',
             status: 'ended',
-            image: require('@/assets/images/temp/list-item-3.png'),
+            image: require('@/assets/images/temp/list-item-3.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 100,
