@@ -78,6 +78,114 @@
       background-position: 60px 0;
     }
   }
+  
+  .project-info__descr,
+  .project-info__characters-label,
+  .project-details,
+  .project-whitelist__item{
+    color: #738ADA;
+  }
+  .project-info__characters-item:before{
+    background: #C0C0DF;
+  }
+  .project-whitelist__copy{
+    path{
+      fill: #738ADA;
+    }
+    &:hover{
+      path{
+        fill: rgba(#738ADA, .7);
+      }
+    }
+  }
+  .project-whitelist__item{
+    border-color: #C0C0DF;
+  }
+  .project-whitelist{
+    &__inner{
+      box-shadow: unset;
+    }
+  }
+  .project-sale,
+  .project-details__item,
+  .project-info__top,
+  .project-info__characters{
+    box-shadow: unset;
+  }
+  .project-sale__input-wrapper{
+    .label-text{
+      color: #B4B4DE;
+    }
+    .input::placeholder,
+    .project-sale__max{
+      color: #9090A0;
+    }
+  }
+
+  .list-filters__search-wrapper{
+    svg{
+      path{
+        fill: #6333FF;
+      }
+    }
+  }
+
+  .VuePagination__pagination-item .page-link{
+    color: #6333FF;
+  }
+  .VuePagination__pagination-item.active .page-link{
+    background: #6333FF !important;
+    color: #fff;
+  }
+  .VuePagination__pagination-item-prev-page,
+  .VuePagination__pagination-item-next-page{
+    .page-link{
+      border-color: #C0C0DF;
+      svg{
+        path{
+          fill: #C0C0DF;
+        }
+      }
+      &:hover{
+        border-color: rgba(#C0C0DF, .7);
+        svg{
+          path{
+            fill: rgba(#C0C0DF, .7);
+          }
+        }
+      }
+    }
+    &.disabled{
+      .page-link{
+        border-color: rgba(162, 162, 162, 0.2);
+        svg{
+          path{
+            fill: rgba(162, 162, 162, 0.2);
+          }
+        }
+      }
+    }
+  }
+  .list-filters__checkboxes-wrapper .label-text, .list-filters__checkboxes-wrapper .multiselect-placeholder, .list-filters__checkboxes-wrapper .multiselect-single-label{
+    color: #6333FF;
+  }
+  .list-filters__checkboxes-wrapper .multiselect-placeholder:before, .list-filters__checkboxes-wrapper .multiselect-single-label:before{
+    background-image: url('./assets/images/select-caret--theme.svg');
+  }
+
+  .input{
+    border-color: #6333FF;
+    color: #6333FF;
+    &::placeholder{
+      color: #6333FF;
+    }
+    &--grey{
+      border-color: #C0C0DF;
+      &:hover{
+        
+      }
+    }
+  }
   // .cover__inner{
   //   min-height: 300px;
   // }

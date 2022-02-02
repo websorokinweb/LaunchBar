@@ -8,7 +8,7 @@
       :class='social.type == "telegram" ? "social__link--telegram" : ""'
       target="_blank"
       >
-        <img :src="theme === '' ? social.src : social.themeSrc" alt="">
+        <img :src="getIcon(social.type)" alt="">
       </a>
     </li>
   </ul>
@@ -24,6 +24,17 @@ export default {
       default: null,
     },
   },
+  methods: {
+    getIcon(type){
+      if(type === 'telegram'){
+        return this.theme === '' ? require('@/assets/images/telegram.svg') : require('@/assets/images/telegram--theme.svg')
+      }else if(type === 'twitter'){
+        return this.theme === '' ? require('@/assets/images/twitter.svg') : require('@/assets/images/twitter--theme.svg')
+      }else if(type === 'discord'){
+        return this.theme === '' ? require('@/assets/images/discord.svg') : require('@/assets/images/discord--theme.svg')
+      }
+    }
+  },
   computed: {
     ...mapGetters(['theme']),
     items() {
@@ -35,20 +46,14 @@ export default {
       socials:[
         {
           href: 'https://www.instagram.com',  
-          src: require('@/assets/images/telegram.svg'),
-          themeSrc: require('@/assets/images/telegram--theme.svg'),
           type: 'telegram',
         },
         {
           href: '#',
-          src: require('@/assets/images/twitter.svg'),
-          themeSrc: require('@/assets/images/twitter--theme.svg'),
           type: 'twitter',
         },
         {
           href: '#',
-          src: require('@/assets/images/discord.svg'),
-          themeSrc: require('@/assets/images/discord--theme.svg'),
           type: 'discord',
         },
       ],

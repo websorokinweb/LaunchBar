@@ -80,17 +80,14 @@ export default {
       socials:[
         {
           href: '#',  
-          src: require('@/assets/images/telegram.svg'),
           type: 'telegram',
         },
         {
           href: '#',
-          src: require('@/assets/images/twitter.svg'),
           type: 'twitter',
         },
         {
           href: '#',
-          src: require('@/assets/images/discord.svg'),
           type: 'discord',
         },
       ],
