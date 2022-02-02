@@ -73,6 +73,7 @@
           >
           </header-profile>
         </button>
+        <app-theme></app-theme>
         <button class="header__menu-btn header__menu-btn--not-main btn-clear"
         @click='toggleMenu()'
         >
@@ -151,6 +152,7 @@
 import { mapGetters, mapMutations } from 'vuex'
 
 import AppLogo from '@/components/App/AppLogo.vue';
+import AppTheme from '@/components/App/AppTheme.vue';
 import HeaderBlockchains from '@/components/Header/HeaderBlockchains.vue';
 import HeaderWallets from '@/components/Header/HeaderWallets.vue';
 import HeaderProfile from '@/components/Header/HeaderProfile.vue';
@@ -234,6 +236,7 @@ export default {
   },
   components: {
     AppLogo,
+    AppTheme,
     HeaderBlockchains,
     HeaderWallets,
     HeaderProfile,

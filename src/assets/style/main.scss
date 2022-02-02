@@ -867,6 +867,9 @@
       border-radius: 10px;
     }
   }
+  .theme{
+    margin-left: 20px;
+  }
   &__menu{
     position: absolute;
     z-index: 2;
@@ -1180,7 +1183,7 @@
 }
 
 .theme{
-  background: var(--grey-bg);
+  background: linear-gradient(180deg, #6131FA 0%, #4720C7 100%);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1191,6 +1194,7 @@
     width: 18px;
     height: 24px;
     path{
+      fill: #fff;
       transition: all .4s;
     }
   }
