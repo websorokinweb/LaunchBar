@@ -8,6 +8,27 @@
   // Index
 }
 
+@media (max-width: 1135px){
+  // List
+
+  .list-filters__inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-filters__checkboxes-wrapper{
+    .label:first-child{
+      margin-left: 0;
+    }
+  }
+  .list-filters__search-wrapper{
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+
+  // List
+}
+
 @media (max-width: 1024px){
   // Project
 
@@ -69,6 +90,18 @@
 
   // Index
 
+  // List
+
+  .list-items__items{
+    gap: 20px;
+    // grid-template-columns: repeat(2, 1fr);
+  }
+  .project-status{
+    right: -10px;
+  }
+
+  // List
+
   // Project
 
   .project-cover{
@@ -92,6 +125,17 @@
 
   // Project
 }
+
+@media (max-width: 925px){
+  // List
+  
+  .list-items__items{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  // List
+}
+
 
 @media (max-width: 850px){
   // Index
@@ -220,6 +264,47 @@
 
   // Index
 
+  // List
+
+  .list-cover__inner{
+    height: 150px;
+    background-size: cover;
+  }
+  .list-filters__search-wrapper{
+    max-width: unset;
+    min-width: unset;
+    margin-right: 0;
+  }
+  .list-filters__checkboxes-wrapper{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .list-filters__selects{
+    margin-top: 20px;
+    max-width: calc(100vw - 30px);
+  }
+  .list-filters__checkboxes-wrapper .multiselect{
+    min-width: unset;
+  }
+  .list-filters__checkboxes-wrapper .multiselect:first-child{
+    margin-left: 0;
+  }
+  .list-items__items{
+    margin-bottom: 50px;
+  }
+  .list-filters{
+    padding: 31px 0 36px;
+  }
+  // .list-filters__checkboxes{
+  //   flex-wrap: wrap;
+  //   .multiselect{
+  //     margin: 0;
+  //     margin-left: 20px;
+  //   }
+  // }
+
+  // List
+
   // Project
 
   .project-body{
@@ -318,6 +403,14 @@
   }
 
   // Project
+
+  // List
+
+  .list-items__items{
+    grid-template-columns: repeat(1, 1fr)
+  }
+
+  // List
 }
 
 @media (max-width: 550px){
@@ -360,6 +453,17 @@
   }
   
   // Index
+
+  // List
+
+  .list-filters__selects{
+    width: 100%;
+  }
+  .list-filters__checkboxes-wrapper .multiselect{
+    max-width: unset;
+  }
+
+  // List
 
   // Project
 
@@ -411,6 +515,21 @@
   }
 
   // Project
+
+  // List
+
+  .list-filters__checkboxes-wrapper .multiselect{
+    margin-left: 15px;
+  }
+  .list-filters__checkboxes-wrapper .multiselect .multiselect-single-label{
+    padding: 2px 25px 2px 10px;
+    text-align: center;
+  }
+  .list-filters__checkboxes-wrapper .label{
+    margin-left: 15px;
+  }
+
+  // List
 }
 
 // @media (max-width: 1380px){

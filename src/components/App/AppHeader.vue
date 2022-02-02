@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="header__menu"
-    :class='[menuIsOpen, menuIsNotOnMainPage]'
+    :class='[menuIsOpen]'
     @click='toggleMenu()'
     >
       <button class="header__blockchain btn-clear"
@@ -230,9 +230,6 @@ export default {
         return "header__menu--active"
       }
       return ""
-    },
-    menuIsNotOnMainPage(){
-      return this.$route.name === 'Index' ?  "" : "header__menu--not-main"
     },
   },
   components: {

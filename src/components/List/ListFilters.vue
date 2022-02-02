@@ -11,25 +11,28 @@
         </div>
         <div class="list-filters__checkboxes-mobileoverflow">
           <div class="list-filters__checkboxes-wrapper">
-            <div class="list-filters__checkboxes">
-              <app-input
-              v-for='item in info.filtersCheckboxes'
-              :key='item'
-              radio
-              :checkboxValue='item.value'
-              :descr='item.text'
-              :checkboxChecked='item.checked'
-              :checkboxName='info.filtersName'
-              @choosed='setType'
-              v-show='item.show !== false'
-              ></app-input>
-
+            <div class="list-filters__inputs-wrapper mobile-overflow">
+              <div class="list-filters__inputs mobile-overflow-wrapper">
+                <div class="list-filters__inputs-content">
+                  <app-input
+                  v-for='item in info.filtersCheckboxes'
+                  :key='item'
+                  radio
+                  :checkboxValue='item.value'
+                  :descr='item.text'
+                  :checkboxChecked='item.checked'
+                  :checkboxName='info.filtersName'
+                  @choosed='setType'
+                  ></app-input>
+                </div>
+              </div>
+            </div>
+            <div class="list-filters__selects">
               <app-select
               :options='info.filtersSelects[0].options'
               @selectedBlockchain='setFilterStatus'
               :placeholderValue="info.filtersSelects[0].text"
               ></app-select>
-
               <app-select
               :options='info.filtersSelects[1].options'
               @selectedBlockchain='setFilterSort'

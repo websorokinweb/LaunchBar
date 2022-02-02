@@ -112,7 +112,7 @@
 
 .list-cover{
   background: url('./assets/images/list-cover.png');
-  background-position: 100% 100%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   &__inner{
     height: 180px;
@@ -1349,7 +1349,7 @@
     align-items: center;
     width: 100%;
   } 
-  &__checkboxes{
+  &__checkboxes-wrapper{
     display: flex;
     align-items: center;
     .label{
@@ -1520,6 +1520,11 @@
         }
       }
     }
+  }
+  &__inputs-content,
+  &__selects{
+    display: flex;
+    align-items: center;
   }
 }
 
