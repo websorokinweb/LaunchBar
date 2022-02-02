@@ -1,7 +1,7 @@
 <template>
   <button
   class="theme btn-clear"
-  :class="theme === 'dark' ? 'theme--dark' : ''"
+  :class="theme === 'light' ? 'theme--light' : ''"
   @click="toggleTheme()"
   >
     <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@ export default {
   },
   mounted: function () {
     if(localStorage.getItem("theme") === null){
-      localStorage.setItem("theme", 'dark')
+      localStorage.setItem("theme", '')
     }
 
     let localTheme = localStorage.getItem("theme"); //gets stored theme value if any
@@ -32,7 +32,7 @@ export default {
   methods: {
     ...mapMutations(['setTheme']),
     toggleTheme() {
-      this.theme = this.theme == "dark" ? "" : "dark"; //toggles theme value
+      this.theme = this.theme == "light" ? "" : "light"; //toggles theme value
       document.documentElement.setAttribute("data-theme", this.theme); // sets the data-theme attribute
       localStorage.setItem("theme", this.theme); // stores theme value on local storage
 

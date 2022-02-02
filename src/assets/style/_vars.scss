@@ -20,7 +20,7 @@ $blue: #4CA8EA;
   --block-bg: #212132;
 }
 
-[data-theme="dark"]{
+[data-theme="light"]{
   --black: #FFFFFF;
   --grey-bg: #1D1625;
   --grey-light: #C0C0C0;
@@ -28,5 +28,8 @@ $blue: #4CA8EA;
   --pink: #E145EF;
   --blue: #4CA8EA;
 
-  --main-bg: #15101B;
+  --main-bg: #F3F3F7;
+  --block-bg: #E0E0F2;
+
+  --text: #6333FF;
 }

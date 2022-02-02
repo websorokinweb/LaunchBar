@@ -3,7 +3,7 @@ const state = {
 };
 
 if(localStorage.getItem("theme") === null){
-  localStorage.setItem("theme", 'dark')
+  localStorage.setItem("theme", 'light')
 }
 
 state.theme = localStorage.getItem('theme')
