@@ -134,7 +134,6 @@
         <app-theme></app-theme>
       </div>
       <div class="blockchains"
-      :class='blockchainsState'
       @click.stop
       >
         <p class="blockchains__title">
@@ -228,6 +227,7 @@ export default {
       'togglePopUpBlockchains',
       'togglePopUpWallets',
       'togglePopUpProfile',
+      'setNewBlockchain',
     ]),
     copyWalletId(){
       const el = document.createElement('textarea');
@@ -240,6 +240,26 @@ export default {
     generateName(){
       let randomValue = Math.random() + Math.random()
       this.data.blockchainsName = randomValue.toString()
+    },
+    checkInput(value){
+      let allBlockchains = this.allBlockchains
+      let needValue = Object.values(allBlockchains).find((obj) => {
+        return obj.value == value
+      })
+
+      this.setNewBlockchain(needValue)
+      this.togglePopUpBlockchains()
+      // if(value === 'dfinity'){
+      //   window.open('https://xpkrh-oyaaa-aaaai-qbgaq-cai.ic0.app/');
+      // }else{
+      //   let allBlockchains = this.allBlockchains
+      //   let needValue = Object.values(allBlockchains).find((obj) => {
+      //     return obj.value == value
+      //   })
+
+      //   this.setNewBlockchain(needValue)
+      //   this.togglePopUpBlockchains()
+      // }
     },
   },
   computed: {
