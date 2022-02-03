@@ -22,7 +22,12 @@
         radio
         >
           <span class="blockchains__imgwrapper">
-            <img :src="item.image" alt="">
+            <img :src="item.image" alt=""
+            v-if="theme === ''"
+            >
+            <img :src="item.themeImage === undefined ? item.image : item.themeImage" alt=""
+            v-else
+            >
           </span>
         </app-input>
       </li>
@@ -57,7 +62,10 @@ export default {
     blockchainsState() {
       return this.opened ? 'blockchains--active' : ''
     },
-    ...mapGetters(['allBlockchains']),
+    ...mapGetters([
+      'allBlockchains',
+      'theme',
+    ]),
     ...mapGetters(['currentBlockchain']),
   },
   methods: {

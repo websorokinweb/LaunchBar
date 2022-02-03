@@ -611,6 +611,14 @@
     align-items: center;
     justify-content: center;
   }
+  &__create{
+    svg{
+      display: none;
+      path{
+        fill: #6333FF;
+      }
+    }
+  }
   &__inner{
     display: flex;
     justify-content: flex-end;
@@ -719,6 +727,10 @@
     display: flex;
     img{
       transition: all .4s;
+      min-width: 14px;
+      max-width: 14px;
+      min-height: 16px;
+      max-height: 16px;
     }
     &:hover{
       img{
@@ -793,6 +805,9 @@
     position: absolute;
     top: 12px;
     right: 14px;
+    path{
+      opacity: .37;
+    }
   }
   &__profile{
     position: relative;
@@ -868,11 +883,11 @@
     height: 26px;
     min-width: 26px;
     margin-left: 18px;
-    span{
+    div{
       height: 3px;
       width: 100%;
       display: block;
-      background-color: #9E9EA7;
+      background-color: #fff;
       border-radius: 10px;
     }
   }
@@ -885,7 +900,7 @@
     right: 0;
     top: 80px;
     width: 320px;
-    background-color: #fff;
+    background-color: var(--block-bg);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
     transform: translateX(320px);
     transition: all .4s;
@@ -921,31 +936,21 @@
     .header__account{
       display: none;
     }
-    .header__search-wrapper{
-      margin: 20px;
-      max-width: 100%;
-      width: auto;
-      display: none;
-    }
-    .header__buttons{
-      margin: 15px 20px;
-      flex-direction: column;
-      .btn{
-        margin-left: 0;
-      }
-      .btn--blue{
-        margin-left: 0;
-        margin-top: 10px;
-      }
-      .btn--pink{
-        margin-top: 10px;
-      }
-    }
     .social__list{
       margin-bottom: 20px;
       margin-top: auto;
       border-top: 1px solid rgba($grey, .3);
       padding-top: 15px;
+    }
+    .profile{
+      left: -45px;
+      right: unset;
+      max-width: 290px;
+      min-width: 290px;
+      width: 100%;
+    }
+    .profile__form{
+      padding: 0;
     }
     .wallets{
       z-index: 4;
@@ -1109,6 +1114,11 @@
   }
   &__sizes{
     color: #fff;
+  }
+  &__imgwrapper{
+    path{
+      opacity: .2;
+    }
   }
   &__imgwrapper-uploaded{
     position: absolute;

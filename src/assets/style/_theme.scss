@@ -179,12 +179,67 @@
     &::placeholder{
       color: #6333FF;
     }
+    &:focus{
+      background: rgba(99, 51, 255, 0.1);
+    }
     &--grey{
       border-color: #C0C0DF;
       &:hover{
         
       }
     }
+  }
+
+  .header__blockchain-arrow{
+    path{
+      fill: rgba(99, 51, 255, 0.5);
+      opacity: 1;
+    }
+  }
+  .header .btn--lined,
+  .header__blockchain-name{
+    color: #6333FF;
+  }
+  .header__blockchain-icon{
+    background: #6333FF;
+  }
+  .blockchains,
+  .profile,
+  .wallets{
+    background: #fff;
+  }
+  .blockchains__title,
+  .blockchains .label-text,
+  .profile__title,
+  .profile .label-text,
+  .profile__sizes{
+    color: #6333FF;
+  }
+  .profile .label-text{
+    color: #B4B4DE;
+  }
+  .profile .upload{
+    background: var(--block-bg);
+  }
+  .profile .upload{
+    border-color: #6333FF;
+  }
+  .profile__file-types{
+    color: #B4A6E2;
+  }
+  .profile__imgwrapper{
+    path{
+      opacity: 1;
+      fill: #6333FF;
+    }
+  }
+  .header__menu-btn{
+    div{
+      background: rgba(99, 51, 255, 1);
+    }
+  }
+  .blockchains__imgwrapper{
+    background: #738ADA;
   }
   // .cover__inner{
   //   min-height: 300px;

@@ -138,6 +138,19 @@
 
 
 @media (max-width: 850px){
+  .header__blockchain-name{
+    display: none;
+  }
+  .header__blockchain.btn--lined {
+    max-width: 80px;
+  }
+
+  .header-gap,
+  .header,
+  .header__inner{
+    height: 80px;
+  }
+
   // Index
 
   .index-cover{
@@ -184,6 +197,22 @@
   .footer .logo{
     transform: translateX(-50%);
     top: 17px;
+  }
+
+  .header__create.btn{
+    font-size: 0;
+    max-width: 40px;
+    svg{
+      display: unset;
+    }
+  }
+
+  .header__blockchain{
+    margin: 0 15px;
+  }
+  .header .theme,
+  .header__profile{
+    margin-left: 15px;
   }
 
   // .footer__copyright{
@@ -340,6 +369,51 @@
 }
 
 @media (max-width: 650px){
+  .header .logo{
+    max-width: 140px;
+    min-height: 40px;
+    img{
+      height: 100%;
+      min-height: 40px;
+      object-fit: contain;
+    }
+  }
+  .header .theme,
+  .header .header__profile{
+    display: none;
+  }
+  .header__menu{
+    .theme,
+    .header__profile{
+      display: flex;
+    }
+    .header__create,
+    .header__wallets,
+    .header__blockchain{
+      display: none;
+    }
+    .social__list{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .header__blockchain{
+    margin: 0 10px;
+  }
+  .header__menu-btn{
+    display: flex;
+    margin-left: 10px;
+  }
+  .header__menu-settings{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    .header__profile,
+    .theme{
+      margin-left: 0;
+    }
+  }
+
   // Project
 
   .project-info__characters{
@@ -414,6 +488,11 @@
 }
 
 @media (max-width: 550px){
+  .header__wallets--value{
+    font-size: 12px;
+    line-height: 14px;
+  }
+
   // Project
 
   .project-info__characters{
@@ -440,9 +519,57 @@
   .footer__copyright{
     margin-bottom: 20px;
   }
+  .header__blockchain{
+    display: none;
+  }
+  .header__blockchain.btn--lined{
+    display: none;
+  }
+  .header__create{
+    margin-right: 10px;
+  }
+  .header__menu{
+    .header__blockchain{
+      display: flex;
+    }
+    .blockchains{
+      background: unset;
+      border: unset;
+      margin: 20px 0 0;
+      display: block;
+      transform: unset;
+      z-index: 2;
+      pointer-events: all;
+    }
+    .blockchains__items{
+      grid-template-columns: repeat(3, 85px);
+    }
+  }
 }
 
 @media (max-width: 425px){
+  .header__wallets{
+    padding: 0 15px;
+  }
+  .header__create{
+    margin-left: 15px;
+  }
+  .header__create.btn{
+    display: none;
+  }
+  .header__menu{
+    .header__create.btn{
+      display: flex;
+      margin: 0;
+    }
+    .profile{
+      left: -18px;
+    }
+  }
+  .header__wallets{
+    margin-left: 10px;
+  }
+
   // Index
 
   .index-cover__buttons .btn + .btn{
@@ -530,6 +657,12 @@
   }
 
   // List
+}
+
+@media (min-width: 650px){
+  .header__menu{
+    display: none;
+  }
 }
 
 // @media (max-width: 1380px){
@@ -2794,10 +2927,4 @@
 //   }
 
 //   // User
-// }
-
-// @media (min-width: 900px){
-//   .header__menu{
-//     display: none;
-//   }
 // }
