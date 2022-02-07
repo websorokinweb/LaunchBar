@@ -1,6 +1,12 @@
 const state = {
   allBlockchains:[
     {
+      label: 'Immutable X',
+      value: 'immutablex',
+      image: require('@/assets/images/blockchain-immux.svg'),
+      themeImage: require('@/assets/images/blockchain-immux-theme.svg')
+    },
+    {
       label: 'BSC',
       value: 'bsc',
       image: require('@/assets/images/blockchain-bsc.svg'),
@@ -26,12 +32,6 @@ const state = {
     //   value: 'moonriver',
     //   image: require('@/assets/images/blockchain-moonriver.svg')
     // },
-    {
-      label: 'Immutable X',
-      value: 'immutablex',
-      image: require('@/assets/images/blockchain-immux.svg'),
-      themeImage: require('@/assets/images/blockchain-immux-theme.svg')
-    },
     {
       label: 'Near',
       value: 'near',
@@ -67,10 +67,10 @@ const state = {
     },
   ],
   currentBlockchain: {
-    label: 'BSC',
-    value: 'bsc',
-    image: require('@/assets/images/blockchain-bsc.svg'),
-    themeImage: require('@/assets/images/blockchain-bsc-theme.svg')
+    label: 'Immutable X',
+    value: 'immutablex',
+    image: require('@/assets/images/blockchain-immux.svg'),
+    themeImage: require('@/assets/images/blockchain-immux-theme.svg')
   },
   currentWallet: {
     label: 'MetaMask',

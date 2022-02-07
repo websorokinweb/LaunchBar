@@ -56,26 +56,37 @@
   .progress-line{
     background: #C0C0DF;
     &--done{
-      // linear-gradient(90deg, #B492EF 0%, #5C59E9 100%);
+      background-size: 30px 30px;
       background-image: repeating-linear-gradient(
-        90deg,
-        #B492EF 20%,
-        #B492EF 50%,
-        #5C59E9 50%,
-        #5C59E9 70%
+        135deg,
+        #10B880 20%,
+        #10B880 50%,
+        #167254 50%,
+        #167254 70%
       );
-      // background: linear-gradient(90deg, #B492EF 0%, #5C59E9 100%);
-      animation-name: line-stripe-theme;
     }
   }
 
-  @keyframes line-stripe-theme {
-    0% {
-      background-position: 0 0;
-    }
-  
-    100% {
-      background-position: 60px 0;
+  .list-filters__checkboxes-wrapper{
+    .multiselect{
+      .multiselect-option{
+        color: #6030F9;
+        &:hover{
+          &.is-pointed,
+          &.is-selected{
+            background: #C0C0DF;
+          }
+        }
+      }
+      .multiselect-option.is-pointed,
+      .multiselect-option.is-selected{
+        background: #C0C0DF;
+      }
+      .multiselect-dropdown{
+        &::-webkit-scrollbar-thumb{
+          background-color: #a5a5be;
+        }
+      }
     }
   }
   

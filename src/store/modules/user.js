@@ -62,7 +62,7 @@ async function connectNear(){
     ).then(
       state.walletConnected = localStorage.getItem('undefined_wallet_auth_key').accountId !== ''
     )
-
+    checkIfConnected()
     // if(localStorage.getItem('undefined_wallet_auth_key')){
     //   state.walletConnected = localStorage.getItem('undefined_wallet_auth_key').accountId !== ''
     // }
@@ -78,8 +78,11 @@ async function leaveNear(){
   localStorage.setItem('undefined_wallet_auth_key', null)
   state.nearWallet = null
   state.nearWalletId = null
+
+  checkIfConnected()
 }
 
+// localStorage.getItem('undefined_wallet_auth_key')
 
 const state = {
   user:{
@@ -98,11 +101,21 @@ const state = {
   useFalse: false,
 };
 
+function checkIfConnected(){
+  if(localStorage.getItem('walletId') === ''){
+    state.walletConnected = false
+  }else{
+    state.walletConnected = true
+  }
+}
+
+checkIfConnected()
+
 const getters = {
   userLogged: state => state.username !== '',
   user: state => state.user,
   wallet: state => state.wallet,
-  walletConnected: state => state.useFalse ? null : localStorage.getItem('undefined_wallet_auth_key'),
+  walletConnected: state => state.walletConnected,
   // walletConnected: state => state.wallet,
   nearWallet: state => state.nearWallet,
   nearWalletId: state => state.nearWalletId,

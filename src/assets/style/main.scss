@@ -168,6 +168,17 @@
       height: 100%;
       border-radius: 30px 30px 0 0;
     }
+    &:before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px 30px 0 0;
+      background: rgba(#000, 0.1);
+    }
     &:after{
       content: '';
       position: absolute;
@@ -1446,17 +1457,6 @@
         line-height: 19px;
         display: flex;
         align-items: center;
-        // &:after{
-        //   content: '';
-        //   position: absolute;
-        //   top: 16px;
-        //   right: 20px;
-        //   width: 10px;
-        //   height: 10px;
-        //   background-image: url('./assets/images/select-caret.svg');
-        //   background-repeat: no-repeat;
-        //   transition: all .4s;
-        // }
       }
       .multiselect-placeholder,
       .multiselect-single-label{
@@ -1481,11 +1481,6 @@
         }
       }
     }
-    // .multiselect{
-    //   border-radius: 25px;
-    //   background: transparent;
-    //   border: none;
-    // }
     .label-text,
     .multiselect-placeholder,
     .multiselect-single-label{
