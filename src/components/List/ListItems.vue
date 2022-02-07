@@ -116,8 +116,11 @@ import maskTextMixin from '@/mixins/maskTextMixin';
 import InfiniteScroll from "infinite-loading-vue3";
 // import axios from "axios";
 
+import { mapGetters } from 'vuex';
+
 export default {
   computed: {
+    ...mapGetters(['filters']),
     allProjects() {
       return this.info.items.map( (item) => {
 
@@ -387,7 +390,7 @@ export default {
             saleStartTime: '2022-02-26T22:53:30',
           },)
       // try {
-      //   const result = await axios.get(`items&page=${this.page}`)
+      //   const result = await axios.get(`items&page=${this.page}`, this.filters)
       //   if(result) {
       //     this.info.items.push(...result);
       //     this.page++;

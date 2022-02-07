@@ -589,6 +589,24 @@
   .list-filters__checkboxes-wrapper .multiselect{
     max-width: unset;
   }
+  .list-filters__checkboxes-wrapper .label{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .list-filters__checkboxes-wrapper .label-text{
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  .list-filters__inputs-content .label{
+    width: 100%;
+  }
+  .list-filters__checkboxes-mobileoverflow,
+  .list-filters__inputs-wrapper{
+    width: 100%;
+  }
 
   // List
 
@@ -654,6 +672,18 @@
   }
   .list-filters__checkboxes-wrapper .label{
     margin-left: 15px;
+  }
+
+  // List
+}
+
+@media (max-width: 360px){
+  // List
+
+  .list-filters__checkboxes-wrapper .label-text{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
   }
 
   // List
