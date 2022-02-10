@@ -67,7 +67,8 @@
     }
   }
 
-  .list-filters__checkboxes-wrapper{
+  .list-filters__checkboxes-wrapper,
+  .admin-project{
     .multiselect{
       .multiselect-option{
         color: #6030F9;
@@ -184,6 +185,15 @@
     background-image: url('./assets/images/select-caret--theme.svg');
   }
 
+  .multiselect-placeholder,
+  .multiselect-single-label{
+    color: #6333FF;
+  }
+  .multiselect-placeholder:before,
+  .multiselect-single-label:before{
+    background-image: url('./assets/images/select-caret--theme.svg');
+  }
+
   .input{
     border-color: #6333FF;
     color: #6333FF;
@@ -231,10 +241,10 @@
   .profile .label-text{
     color: #B4B4DE;
   }
-  .profile .upload{
+  .upload{
     background: var(--block-bg);
   }
-  .profile .upload{
+  .upload{
     border-color: #6333FF;
   }
   .profile__file-types{
@@ -254,6 +264,10 @@
   .wallets__imgwrapper,
   .blockchains__imgwrapper{
     background: #738ADA;
+  }
+
+  .label-text{
+    color: #738ADA;
   }
   // .cover__inner{
   //   min-height: 300px;

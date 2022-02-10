@@ -47,7 +47,7 @@
     :rows='rows'
     @input='typedText()'
     :value='modelValue'
-    ref='input'
+    ref="textarea"
     ></textarea>
   </label>
 
@@ -68,7 +68,6 @@
     @input='typedText'
     :value='modelValue'
     :required='inputRequired'
-    ref='input'
     >
   </label>
 </template>
@@ -156,7 +155,11 @@ export default {
   },
   methods: {
     typedText(event) {
-      this.$emit('update:modelValue', event.target.value)
+      if(!this.textarea){
+        this.$emit('update:modelValue', event.target.value)
+      }else{
+        this.$emit('update:modelValue', this.$refs.textarea.value)
+      }
     },
     toggledCheckbox(){
       this.$emit('choosed', this.checkboxValue)

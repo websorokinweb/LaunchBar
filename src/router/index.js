@@ -1,35 +1,44 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Index from '../views/Index.vue';
-
-import List from '../views/List.vue';
-
-import Project from '../views/Project.vue';
+// function showAdminList(){
+//   if(localStorage.getItem('isAdmin') == 'true'){
+//     router.push({name: 'AdminList'})
+//   }
+// }
 
 const routes = [
   {
     path: '/',
     name: 'Index',
-    component: Index,
+    component: () => import(/* webpackChunkName: "index" */ '../views/Index.vue'),
   },
   {
     path: '/list',
     name: 'List',
-    component: List,
+    component: () => import(/* webpackChunkName: "list" */ '../views/List.vue'),
   },
   {
     path: '/project/:project',
     name: 'Project',
-    component: Project,
+    component: () => import(/* webpackChunkName: "project" */ '../views/Project.vue'),
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  // },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import(/* webpackChunkName: "admin" */ '../views/Admin.vue'),
+  },
+  {
+    path: '/admin/list',
+    name: 'AdminList',
+    component: () => import(/* webpackChunkName: "adminList" */ '../views/AdminList.vue'),
+    // beforeEnter: showAdminList,
+    // beforeRouteUpdate: showAdminList,
+  },
+  {
+    path: '/admin/add',
+    name: 'AdminProject',
+    component: () => import(/* webpackChunkName: "adminAdd" */ '../views/AdminProject.vue'),
+  },
 ];
 
 const router = createRouter({

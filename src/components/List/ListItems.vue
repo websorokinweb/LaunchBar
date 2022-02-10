@@ -120,7 +120,10 @@ import { mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['filters']),
+    ...mapGetters([
+      'filters',
+      'currentBlockchain',
+    ]),
     allProjects() {
       return this.info.items.map( (item) => {
 
@@ -154,7 +157,6 @@ export default {
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
-            saleStart: '',
             softCap: 75,
             hardCap: 150,
             exchangeRate: 5000000000,
@@ -207,7 +209,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -222,7 +224,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -237,7 +239,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -252,7 +254,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -267,7 +269,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -282,7 +284,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -297,7 +299,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -312,7 +314,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -327,7 +329,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -342,7 +344,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -357,7 +359,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -372,7 +374,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -387,10 +389,10 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },)
       // try {
-      //   const result = await axios.get(`items&page=${this.page}`, this.filters)
+      //   const result = await axios.get(`items&page=${this.page}`, [this.filters, this.currentBlockchain.value])
       //   if(result) {
       //     this.info.items.push(...result);
       //     this.page++;
@@ -479,7 +481,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -494,7 +496,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -509,7 +511,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -524,7 +526,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -539,7 +541,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -554,7 +556,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -569,7 +571,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -584,7 +586,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -599,7 +601,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -614,7 +616,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -629,7 +631,7 @@ export default {
             exchangeRate: 5000000000,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -644,7 +646,7 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
           {
             name: 'NameProject',
@@ -659,7 +661,7 @@ export default {
             exchangeRate: 3240071022,
 
             presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-26T22:53:30',
+            saleStartTime: '2022-02-12T22:53:30',
           },
         ],
       },
