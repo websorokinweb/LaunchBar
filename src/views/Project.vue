@@ -32,7 +32,8 @@ import ProjectWhitelist from '@/components/Project/ProjectWhitelist.vue';
 import maskTextMixin from '@/mixins/maskTextMixin';
 
 import axios from 'axios';
-import { useRoute } from 'vue-router'
+import { useRoute } from 'vue-router';
+import { mapGetters } from 'vuex';
 
 export default {
   title () {
@@ -42,7 +43,7 @@ export default {
     const route = useRoute()
     let item = {}
 
-    axios.get('/user?NAME=' + route.params.project)
+    axios.get('/project/' + route.params.project)
       .then(function (response) {
         item = response
       })
@@ -92,8 +93,9 @@ export default {
         },
       ],
 
-      presaleStartTime: '2022-01-28T22:53:30',
-      presaleEndTime: '2022.01.12 18:00 (UTC)',
+      presaleStartTime: '2022-02-10T22:53:30',
+      presaleEndTime: '2022-02-17T22:53:30', 
+      // Если началась предпродажа, то таймер стопаеться
 
       listingOn: 'Pancakeswap',
       liquadityPercent: 70,
@@ -106,7 +108,24 @@ export default {
       item,
     }
   },
+  mounted () {
+    if(this.item.useWhitelist){
+      let inWhitelist = false
+      axios.get('/project/' + this.wallet.id)
+        .then(function (response) {
+          inWhitelist = response
+        })
+
+      // Remove
+      inWhitelist = true
+
+      return inWhitelist
+    }
+  },
   computed: {
+    ...mapGetters([
+      'wallet'
+    ]),
     editeditem() {
       let item = this.item
 

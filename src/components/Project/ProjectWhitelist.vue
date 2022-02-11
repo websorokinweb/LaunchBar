@@ -22,7 +22,11 @@
           </p>
           <p class="project-whitelist__wallet">
             <span class="project-whitelist__wallet-value">
-              {{ item }}
+              {{  
+                item.slice(0, 5)
+                + '...' +
+                item.slice(-4, item.length)
+              }}
             </span>
             <button class="project-whitelist__copy btn-clear"
             @click="copyWallet(item)"
@@ -82,18 +86,18 @@ export default {
       document.body.removeChild(el);
     },
     getWhitelistPage(e) {
-      // Убрать
+      // Remove
       this.project.whitelist = [
-          '0x73...y956',
-          '0x73...y957',
-          '0x73...y958',
-          '0x73...y959',
-          '0x73...y960',
-          '0x73...y961',
-          '0x73...y962',
-          '0x73...y963',
-          '0x73...y964',
-          '0x73...y965',
+          'nepheline.testnet',
+          '0x73d3jo9jdk3o9y957',
+          '0x73d3jo9jdk3o9y958',
+          '0x73d3jo9jdk3o9y959',
+          '0x73d3jo9jdk3o9y960',
+          '0x73d3jo9jdk3o9y961',
+          '0x73d3jo9jdk3o9y962',
+          '0x73d3jo9jdk3o9y963',
+          '0x73d3jo9jdk3o9y964',
+          '0x73d3jo9jdk3o9y965',
         ]
 
       axios.get('/project/' + this.project.id + '/whitelist?page=' + e)

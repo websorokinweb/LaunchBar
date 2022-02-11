@@ -130,10 +130,6 @@
         v-model="project"
         type="date"
         ></app-input>
-        <!-- <app-input
-        descr="Sale end"
-        v-model="project"
-        ></app-input> -->
 
         <app-input
         descr="Telegram"
