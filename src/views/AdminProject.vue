@@ -122,12 +122,17 @@
 
         <app-input
         descr="Presale start"
-        v-model="project"
+        v-model="project.presaleStartTime"
         type="date"
         ></app-input>
         <app-input
         descr="Sale start"
-        v-model="project"
+        v-model="project.saleStartTime"
+        type="date"
+        ></app-input>
+        <app-input
+        descr="Sale end"
+        v-model="project.saleEndTime"
         type="date"
         ></app-input>
 
@@ -279,6 +284,9 @@ export default {
         },
         blockchainSymbol: '',
         presaleAdress: '',
+        presaleStartTime: '',
+        saleStartTime: '',
+        saleEndTime: '',
         socials:[
           {
             href: '',  
@@ -327,7 +335,9 @@ export default {
         }
     },
     saveProject() {
-      this.project.whitelist = this.project.whitelist.replace(/\s/g, '').split(',')
+      if(this.project.whitelist){
+        this.project.whitelist = this.project.whitelist.replace(/\s/g, '').split(',')
+      }
 
       axios.post('/project?ID=', this.project)
         .then(function () {

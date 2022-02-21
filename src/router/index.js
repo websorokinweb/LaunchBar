@@ -23,19 +23,17 @@ const routes = [
     component: () => import(/* webpackChunkName: "project" */ '../views/Project.vue'),
   },
   {
+    path: '/project/:project/edit',
+    name: 'Project',
+    component: () => import(/* webpackChunkName: "project" */ '../views/AdminProject.vue'),
+  },
+  {
     path: '/admin',
     name: 'Admin',
     component: () => import(/* webpackChunkName: "admin" */ '../views/Admin.vue'),
   },
   {
-    path: '/admin/list',
-    name: 'AdminList',
-    component: () => import(/* webpackChunkName: "adminList" */ '../views/AdminList.vue'),
-    // beforeEnter: showAdminList,
-    // beforeRouteUpdate: showAdminList,
-  },
-  {
-    path: '/admin/add',
+    path: '/add',
     name: 'AdminProject',
     component: () => import(/* webpackChunkName: "adminAdd" */ '../views/AdminProject.vue'),
   },
