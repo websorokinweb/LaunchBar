@@ -76,7 +76,7 @@ export default {
       if(isCorrect){
         // this.setAdmin()
         this.cookies.set('isAdmin', true)
-        this.$router.push({ path: '/admin/list' })
+        this.$router.push({ path: '/' })
       }else{
         this.admin = {}
         this.error ='Something wrong'
