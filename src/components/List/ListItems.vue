@@ -91,7 +91,7 @@
                   v-else
                   >
                     <vue3-flip-countdown 
-                    :deadlineDate="item.time"
+                    :deadlineDate="item.status === 'upcoming' ? item.presaleStartTime : item.saleStartTime"
                     :flipAnimation="false"
                     :showLabels="false"
                     />
@@ -141,38 +141,49 @@ export default {
         item.softCapMask = this.maskText(item.softCap)
         item.hardCapMask = this.maskText(item.hardCap)
         
-        if(item.status == 'upcoming'){
-          item.time = new Date(item.saleStartTime)
-        }else{
-          item.time = new Date(item.saleEndTime)
-        }
-        
+        item.presaleStartTime = new Date(item.presaleStartTime)
+        item.saleStartTime = new Date(item.saleStartTime)
+
         return item
       })
     }
   },
   methods: {
     async loadNewItems() {
-      this.info.items.push({
-            name: 'BabyMafia',
+      this.info.items.push(
+          {
+            name: 'NameProject',
             status: 'upcoming',
             image: require('@/assets/images/temp/list-item-1.jpg'),
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
+            saleStart: '',
             softCap: 75,
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            // presaleStartTime: '2022.01.12 18:00 (UTC)',
-            presaleStartTime: '2022-01-27T22:53:30',
-            saleStartTime: '2022-01-28T22:53:30',
-            presaleEndTime: '2022-01-28T22:53:30',
-
-            listingOn: 'Pancakeswap',
-            liquadityPercent: 70,
-            liquadityLockupTime: '120 days after pool ends',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
+
+          // {
+            // name: 'BabyMafia',
+            // status: 'upcoming',
+            // image: require('@/assets/images/temp/list-item-1.jpg'),
+            // blockchainSymbol: 'BNB',
+            // tokenSymbol: 'SOFT',
+            // collected: 0,
+            // softCap: 75,
+            // hardCap: 150,
+            // exchangeRate: 5000000000,
+// 
+            // presaleStartTime: '2022.01.12 18:00 (UTC)',
+            // presaleStartTime: '2022-03-30T22:53:30',
+            // saleStartTime: '2022-04-10T22:53:30',
+            // saleEndTime: '2022-05-10T22:53:30',
+          // },
           {
             name: 'NameProject',
             status: 'live',
@@ -186,8 +197,8 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-24T22:53:30',
-            saleStartTime: '2022-02-19T22:53:30',
-            saleEndTime: '2022-02-28T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -201,9 +212,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -217,8 +228,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            saleStartTime: '2022-02-25T22:53:30',
-            saleEndTime: '2022-02-31T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -232,8 +244,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -247,9 +260,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -263,8 +276,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -278,8 +292,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -293,9 +308,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -309,8 +324,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -324,8 +340,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -339,9 +356,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -355,8 +372,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -370,8 +388,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -385,9 +404,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },)
       // try {
       //   const result = await axios.get(`items&page=${this.page}`, [this.filters, this.currentBlockchain.value])
@@ -426,13 +445,26 @@ export default {
             blockchainSymbol: 'BNB',
             tokenSymbol: 'SOFT',
             collected: 0,
+            saleStart: '',
             softCap: 75,
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-02-27T22:53:30',
-            saleStartTime: '2022-02-31T22:53:30',
-            presaleEndTime: '2022-03-6T22:53:30',
+            presaleAdress: '',  
+            tokenDecimals: 9,
+            tokenAdress: '0xB4B57F17635134eA65deF7237292ba5ED8e4C975',
+            totalSupply: 1000000000000000,
+            tokenForPresale: 229999999999950,
+            tokenForLiquadity: 160999999999965,
+            presaleRate: 1533333333333,
+            listingRate: 1533333333333,
+            initialMarketCap: 147636,
+            unsoldTokens: 'Refund',
+
+            // presaleStartTime: '2022.01.12 18:00 (UTC)',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
 
             listingOn: 'Pancakeswap',
             liquadityPercent: 70,
@@ -451,8 +483,8 @@ export default {
             exchangeRate: 7347030021,
 
             presaleStartTime: '2022-01-24T22:53:30',
-            saleStartTime: '2022-02-19T22:53:30',
-            saleEndTime: '2022-02-28T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -466,9 +498,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -482,8 +514,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            saleStartTime: '2022-02-25T22:53:30',
-            saleEndTime: '2022-02-31T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -497,8 +530,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -512,9 +546,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -528,8 +562,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -543,8 +578,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -558,9 +594,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -574,8 +610,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -589,8 +626,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -604,9 +642,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -620,8 +658,9 @@ export default {
             hardCap: 150,
             exchangeRate: 5000000000,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -635,8 +674,9 @@ export default {
             hardCap: 500,
             exchangeRate: 7347030021,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
           {
             name: 'NameProject',
@@ -650,9 +690,9 @@ export default {
             hardCap: 100,
             exchangeRate: 3240071022,
 
-            presaleStartTime: '2022-01-26T22:53:30',
-            saleStartTime: '2022-02-12T22:53:30',
-            saleEndTime: '2022-03-03T22:53:30',
+            presaleStartTime: '2022-03-30T22:53:30',
+            saleStartTime: '2022-04-10T22:53:30',
+            saleEndTime: '2022-05-10T22:53:30',
           },
         ],
       },

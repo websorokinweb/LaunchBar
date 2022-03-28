@@ -68,6 +68,7 @@
     @input='typedText'
     :value='modelValue'
     :required='inputRequired'
+    step="any"
     >
   </label>
 </template>

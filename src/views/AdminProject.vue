@@ -213,7 +213,7 @@
         ></app-input>
         <app-input
         descr="Initial Market Cap (estimate)"
-        v-model="project.initialMarketCap"
+        v-model.number="project.initialMarketCap"
         type="number"
         ></app-input>
         <app-input
@@ -255,6 +255,7 @@ import AppUpload from '@/components/App/AppUpload.vue';
 import axios from 'axios';
 
 import { mapGetters } from 'vuex';
+import { useRoute } from 'vue-router';
 
 export default {
   title: 'Admin Add',
@@ -274,7 +275,94 @@ export default {
           value: 'ended',
         },
       ],
-      project: {
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'allBlockchains',
+    ]),
+    projectPostPath(){
+      if(this.$router.currentRoute.value.params.project){
+        return 'project/save?ID=' + this.$router.currentRoute.value.params.project
+      }else{
+        return 'project/save'
+      }
+    }
+  },
+  setup() {
+    const route = useRoute()
+    let project = {}
+
+    if(route.params.project){
+      axios.get('/project/' + route.params.project)
+      .then(function (response) {
+        project = response
+      })
+
+      // Убрать 
+      project = {
+        id: 24,
+        name: 'BabyMafia',
+        status: 'live',
+        blockchainSymbol: 'BNB',
+        tokenSymbol: '$BMF',
+        collected: 0,
+        saleStart: '',
+        softCap: 75,
+        hardCap: 150,
+        exchangeRate: 5000000000,
+
+        cover: {
+          src: '',
+        },
+        logo: {
+          src: '',
+        },
+
+        useWhitelist: true,
+        whitelist: '',
+        minBuy: 0.1,
+        maxBuy: 1,
+
+        descr: 'Baby Mafia is a BSC Token that offers BUSD auto-rewards to all holders, and its main utility is that the token will be used as a primary asset to purchase the upcoming Mafia-themed NFT collection.',
+        presaleAdress: '0x7Da9aB4Ba28677329Fe1BD7338506EF3E5E0895E',  
+        tokenDecimals: 9,
+        tokenAdress: '0xB4B57F17635134eA65deF7237292ba5ED8e4C975',
+        totalSupply: 1000000000000000,
+        tokenForPresale: 229999999999950,
+        tokenForLiquadity: 160999999999965,
+        presaleRate: 1533333333333,
+        listingRate: 1533333333333,
+        initialMarketCap: 147636.2,
+        unsoldTokens: 'Refund',
+
+        socials:[
+          {
+            href: '',  
+            type: 'telegram',
+          },
+          {
+            href: '',
+            type: 'twitter',
+          },
+          {
+            href: '',
+            type: 'discord',
+          },
+        ],
+
+        presaleStartTime: '2022-02-10T22:53:30',
+        presaleEndTime: '2022-02-17T22:53:30',
+        saleEndTime: '2022-05-10T22:53:30',
+
+        listingOn: 'Pancakeswap',
+        liquadityPercent: 70,
+        liquadityLockupTime: '120 days after pool ends',
+
+        whitelistLength: 35,
+      }
+    }else{
+      project = {
         status: '',
         cover: {
           src: '',
@@ -284,9 +372,6 @@ export default {
         },
         blockchainSymbol: '',
         presaleAdress: '',
-        presaleStartTime: '',
-        saleStartTime: '',
-        saleEndTime: '',
         socials:[
           {
             href: '',  
@@ -303,11 +388,10 @@ export default {
         ],
       }
     }
-  },
-  computed: {
-    ...mapGetters([
-      'allBlockchains',
-    ]),
+
+    return {
+      project
+    }
   },
   methods: {
     setLogo(value){
@@ -339,10 +423,17 @@ export default {
         this.project.whitelist = this.project.whitelist.replace(/\s/g, '').split(',')
       }
 
-      axios.post('/project?ID=', this.project)
-        .then(function () {
-          this.$router.push({ path: '/admin/list' })
+      // Remove
+      this.$router.push({ path: '/list' })
+
+      axios.post(this.projectPostPath, {
+          project: this.project
         })
+          .then(response => {
+            if(response.status === 200){
+              this.$router.push({ path: '/list' })
+            }
+          })
     }
   },
   components: {
