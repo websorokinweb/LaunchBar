@@ -1,6 +1,6 @@
 module.exports = {
-  // publicPath: '/LaunchBar/',
-  publicPath: '/',
+  publicPath: '/LaunchBar/',
+  // publicPath: '/',
   devServer: { port: 9999 }
 }
 chainWebpack: (config) => {
