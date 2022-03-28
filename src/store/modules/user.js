@@ -90,9 +90,10 @@ const state = {
       src: '',
     },
     username: '',
+    isAdmin: false,
   },
   wallet:{
-   id: '', 
+    id: '', 
   },
   nearWallet: null,
   nearWalletId: null,
@@ -149,6 +150,9 @@ const mutations = {
   // },
   clearUserLogo(state){
     state.user.logo = {src: ''}
+  },
+  setAdmin(state){
+    state.user.isAdmin = true
   }
 };
 

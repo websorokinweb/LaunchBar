@@ -16,6 +16,7 @@
         descr="Password"
         :inputRequired="true"
         v-model="admin.password"
+        type="password"
         ></app-input>
         <span class="admin-login__error"
         :class="error.length > 0 ? 'admin-login__error--active' : ''"
@@ -33,6 +34,11 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { mapMutations } from 'vuex';
+
+import { useCookies } from "vue3-cookies";
+
 export default {
   title: 'Admin',
   data() {
@@ -44,12 +50,33 @@ export default {
       error: '',
     }
   },
+  setup() {
+    const { cookies } = useCookies();
+    return { cookies };
+  },
   methods: {
+    ...mapMutations(['setAdmin']),
     loginAdmin() {
-      let isCorrect = this.admin.login === 'admin' && this.admin.password === 'Ttr!hx7CMcR7#nnE0biC6vzKs'
+      let isCorrect = false
+
+      // Remove
+      isCorrect = true
+      this.cookies.set('isAdmin', true)
+      // this.setAdmin()
+
+      axios.post('/admin/login', {
+          admin: this.admin
+        })
+          .then(response => {
+            if(response.status === 200){
+              isCorrect = true
+            }
+          })
+
       if(isCorrect){
-        localStorage.setItem('isAdmin', 'true')
-        this.$router.push({ path: '/admin/list' })
+        // this.setAdmin()
+        this.cookies.set('isAdmin', true)
+        this.$router.push({ path: '/' })
       }else{
         this.admin = {}
         this.error ='Something wrong'

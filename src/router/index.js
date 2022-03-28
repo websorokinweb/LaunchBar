@@ -1,10 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-// function showAdminList(){
-//   if(localStorage.getItem('isAdmin') == 'true'){
-//     router.push({name: 'AdminList'})
-//   }
-// }
+import { useCookies } from "vue3-cookies";
+
+const { cookies } = useCookies();
+
+function checkIfAdmin(){
+  let isAdmin = cookies.get('isAdmin')
+  if(isAdmin){
+    return true;
+  }else{
+    router.push({name: 'Index'})
+  }
+}
 
 const routes = [
   {
@@ -23,6 +30,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "project" */ '../views/Project.vue'),
   },
   {
+    path: '/project/:project/edit',
+    name: 'ProjectEdit',
+    component: () => import(/* webpackChunkName: "adminEdit" */ '../views/AdminProject.vue'),
+    beforeEnter: checkIfAdmin,
+    beforeRouteUpdate: checkIfAdmin,
+  },
+  {
     path: '/admin',
     name: 'Admin',
     component: () => import(/* webpackChunkName: "admin" */ '../views/Admin.vue'),
@@ -31,13 +45,15 @@ const routes = [
     path: '/admin/list',
     name: 'AdminList',
     component: () => import(/* webpackChunkName: "adminList" */ '../views/AdminList.vue'),
-    // beforeEnter: showAdminList,
-    // beforeRouteUpdate: showAdminList,
+    beforeEnter: checkIfAdmin,
+    beforeRouteUpdate: checkIfAdmin,
   },
   {
     path: '/admin/add',
     name: 'AdminProject',
     component: () => import(/* webpackChunkName: "adminAdd" */ '../views/AdminProject.vue'),
+    beforeEnter: checkIfAdmin,
+    beforeRouteUpdate: checkIfAdmin,
   },
 ];
 

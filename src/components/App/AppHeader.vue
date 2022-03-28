@@ -282,8 +282,12 @@ export default {
       return this.walletConnected !== false ? "" : "header__wallets--connected"
     },
     walletMin(){
-      return localStorage.getItem('walletId').substr(0, 5) + '...' + localStorage.getItem('walletId').substr(-4, localStorage.getItem('walletId').length)
-      // return localStorage.getItem('walletId')
+      let walletId = localStorage.getItem('walletId') 
+      if(walletId){
+        return walletId.substr(0, 5) + '...' + walletId.substr(-4, localStorage.getItem('walletId').length)
+      }else{
+        return ''
+      }
     },
     menuIsOpen(){
       if(this.menuOpened || this.openedWallets){
