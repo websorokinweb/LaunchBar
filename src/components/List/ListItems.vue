@@ -90,6 +90,7 @@
                   <span class="project-card__sale-time"
                   v-else
                   >
+                    <!-- :deadlineDate="getDeadline(item)" -->
                     <vue3-flip-countdown 
                     :deadlineDate="item.status === 'upcoming' ? item.presaleStartTime : item.saleStartTime"
                     :flipAnimation="false"
@@ -143,12 +144,28 @@ export default {
         
         item.presaleStartTime = new Date(item.presaleStartTime)
         item.saleStartTime = new Date(item.saleStartTime)
+        item.saleEndTime = new Date(item.saleEndTime)
+
+        // console.log(item.saleStartTime - item.presaleStartTime)
+ 
+        // if(item.status == 'upcoming'){
+        //   item.deadlineTime = item.presaleStartTime
+        // }
+        // else if(item.status == 'live'){
+          
+        // }else{
+          
+        // }
 
         return item
       })
     }
   },
   methods: {
+    // getDeadline(item){
+    getDeadline(){
+
+    },
     async loadNewItems() {
       this.info.items.push(
           {
